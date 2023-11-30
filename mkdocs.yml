@@ -1,7 +1,8 @@
 site_name: CaramelteaLatte O.o.
 site_author: ChenYixuan
 copyright: Copyright @ 2023 ChenYixuan, All rights reserved.
-theme: material  # 默认主题
+theme: 
+      name: material  # 默认主题
 
 nav:
   - 首页: index.md
