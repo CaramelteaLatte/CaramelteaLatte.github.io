@@ -1,11 +1,9 @@
 site_name: CaramelteaLatte O.o.
 site_author: ChenYixuan
-copyright: Copyright @ 2023 ChenYixuan, All rights reserved.
+site_url: https://carameltealatte.githuub.io
 theme: 
       name: material  # 默认主题
 
 nav:
   - 首页: index.md
   - 安装方法: ds1.md
-  - 使用方法: 20th.md
-  
