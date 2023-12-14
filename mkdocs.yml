@@ -1,5 +1,9 @@
 site_name: CaramelteaLatte O.o.
 site_author: ChenYixuan
+<<<<<<< HEAD
+=======
+site_url: https://carameltealatte.githuub.io
+>>>>>>> 55023537995b8bca5b1a54be9a00468c3bed6ef0
 theme: 
   name: material  
   language: zh    
@@ -97,5 +101,3 @@ plugins:
 nav:
   - 首页: index.md
   - 安装方法: ds1.md
-  - 使用方法: 20th.md
-  
