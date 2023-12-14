@@ -1,9 +1,6 @@
 site_name: CaramelteaLatte O.o.
 site_author: ChenYixuan
-<<<<<<< HEAD
-=======
-site_url: https://carameltealatte.githuub.io
->>>>>>> 55023537995b8bca5b1a54be9a00468c3bed6ef0
+site_url: https://carameltealatte.github.io
 theme: 
   name: material  
   language: zh    
