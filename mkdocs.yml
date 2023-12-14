@@ -98,3 +98,5 @@ plugins:
 nav:
   - 首页: index.md
   - 安装方法: ds1.md
+  - notes: git.md
+  
