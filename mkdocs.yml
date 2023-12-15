@@ -96,7 +96,13 @@ plugins:
   - search
 
 nav:
-  - 首页: index.md
-  - 安装方法: ds1.md
+  - Home: index.md
+  - SE: 
+    - FDS: 
+      - To Start: ds1.md
+    - OOP:
+    - 数字逻辑设计：
+      - verilog: 
+    - ICS: 
   - notes: git.md
   
