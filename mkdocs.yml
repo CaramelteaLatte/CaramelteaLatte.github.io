@@ -101,7 +101,7 @@ nav:
     - FDS: 
       - To Start: ds1.md
     - OOP:
-    - 数字逻辑设计：
+    - 数字逻辑设计:
       - verilog: 
     - ICS: 
   - notes: git.md
