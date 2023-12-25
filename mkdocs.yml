@@ -97,12 +97,6 @@ plugins:
 
 nav:
   - Home: index.md
-  - SE: 
-    - FDS: 
-      - To Start: ds1.md
-    - OOP:
-    - 数字逻辑设计:
-      - verilog: 
-    - ICS: 
+  - FDS: ds1.md
   - notes: git.md
   
