@@ -99,5 +99,6 @@ nav:
   - Home: index.md
   - SE:
     - FDS: ds1.md
+    - OOP: class.md
   - notes: git.md
   
