@@ -103,3 +103,18 @@ key和区间右端比较，如果右端 >key（符合条件），则区间右端
 
 注意，如果是key取num[first]，（说明first的位置可以被覆盖），那么key的比较应当从区间右端开始，再左端，再往复循环。
 
+## Search
+
+### Hashing
+
+二分查找树时间复杂度NlogN建树+logN查找，对于大数据来说太慢，而hash对于大量的数据，查找复杂度一直是O(1).
+
+hash: 知道key找到index，由key映射index。
+
+- collision：一个key查找到了两个index。
+- overflow：溢出，桶放满了。
+- 当一行只有1个桶的时候，overflow和collision同时发生。
+
+**hash：选择合适的bucket和slot大小+设计key映射index的函数+桶排序+一个桶内链表**
+
+
