@@ -507,6 +507,110 @@ public:
 
 ### I/O stream
 
+```cpp
+#include <iostream>
+#include <string>
+
+using std::istream;
+using std::ostream;
+using std::string;
+using std::to_string;
+
+class Complex {
+private:
+    double real, imaginary;
+public:
+    // ...
+    string toString() const;
+    friend istream& operator>>(istream& is, Complex& right);
+};
+
+string Complex::toString() const {
+    string str = to_string(this->real);
+    str += " + ";
+    str += to_string(this->imaginary);
+    str += 'i';
+    return str;
+}
+
+ostream& operator<<(ostream& os, const Complex& right) {
+    return os << right.toString();
+}
+
+istream& operator>>(istream& is, Complex& right) {
+    char op;
+    is >> right.real >> op >> right.imaginary >> op;
+    return is;
+}
+
+int main() {
+    Complex c;
+    std::cin >> c;
+    std::cout << c;
+}
+```
+
+不能解释但是能看懂。。。。。
+
+istream 和 ostream 是类型，分别指输入和输出。
+
+### const 成员
+
+当我们这样定义时，
+```cpp
+class Complex {
+    string toString() const;
+};
+```
+声明为 const 的成员函数（const放在后面）成为 const 成员函数。const 保证不会更改 *this 的值。具体来说，声明为 `const` 的成员函数中，`this` 的类型是 `const Complex *`；而如果没有声明为 `const`，则 `this` 的类型是 `Complex *`。
+
+在 const 成员函数中，试图调用其他非 const 成员函数，或者更改成员变量都是不合法的。
+
+注意，`const int Foo::foo();` 不是 `const` 成员函数，它是个返回值类型为 `const int` 的 non-const 成员函数。
+
+我们回顾之前的对 `operator[]` 的重载。事实上，通常的设计会这样重载：
+
+```cpp
+class Container {
+    elem * data;
+    // ...
+public:
+          elem & operator[](unsigned index)       { return data[index]; }
+    const elem & operator[](unsigned index) const { return data[index]; }
+    // ...
+}
+```
+当调用者是 `const Container` 时，第二个重载会被使用，此时返回的是对第 `index` 个元素的 `const` 引用；而如果调用者是 `Container` 时，第一个重载会被使用，此时返回的是对第 `index` 元素的 `non-const` 引用。
+
+### static 成员变量
+
+C++ 规定，在类定义中，用 `static` 声明没有绑定到类的实例中的成员；例如：
+```cpp
+struct User {
+    static int tot;
+    int id;
+    User() : id(tot++) {}
+};
+int User::tot = 0;
+```
+它的生命周期仍然从它的定义 `int User::tot = 0;` 开始，到程序结束为止。由于它是类的成员，因此访问它的时候需要用 `User::tot`。
+
+static 成员不被绑定到类的实例中，也就是上面 User 类的每个实例里仍然只有 id 而没有 tot。(但是语法上仍然允许用一个类的实例访问 static 成员，例如 user.tot)
+
+注意，static 成员不允许使用 default member initializer 和 member initializer list。
+
+在类中的 static 成员变量只是声明。我们必须在类外给出其定义，才能让编译器知道在哪里构造这些成员。
+
+```cpp
+class Foo {
+    static int a;
+    static int b;
+};
+
+int Foo::a = 1;
+int Foo::b;
+```
+
 
 
 # Others
