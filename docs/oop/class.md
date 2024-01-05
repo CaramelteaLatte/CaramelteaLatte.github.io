@@ -611,6 +611,133 @@ int Foo::a = 1;
 int Foo::b;
 ```
 
+### inheritance 继承和 derived 派生类
+
+对一个类的继承：public 可以被继承，private 不可以被继承，protected 可以被继承但不能被从外部直接访问。
+
+在派生类内部（成员函数或者友元函数）使用基类成员时，不受继承方式的影响，只看该成员在基类中的属性（因此私有成员不能被访问）；在派生类外部使用基类成员时，继承方式会影响基类成员的访问属性。
+
+三种继承方式：private 继承，protected 继承，public 继承。
+
+- public: 所有基类成员在派生类中保持原有的访问级别
+- protected: public->protected，其余不变
+- private: 所有基类成员在派生类中变为private成员
+  
+| 继承方式/基类成员 | public成员 | protected成员 | private成员 |
+| --------- | --------- | --------- | --------- |
+| public继承 | public | protected | 不可见 |
+| protected继承 | protected | protected | 不可见 |
+| private继承 | private | private | 不可见 |
+
+派生类拥有基类所有成员，还可以定义自己的成员。派生类成员是指在派生类中包含但不在基类中包含的成员。
+
+友元不是类的成员，因此不能被继承。
+
+```cpp
+class Derived : public Base1, private Base2{
+// 派生类的成员列表
+}
+```
+
+### virtual 虚函数
+
+用基类指针指向派生类的时候，能正确调用派生类中的实现函数，从而实现多态。
+
+在成员函数声明的时候，在其前面加上 `virtual` 使其变为虚函数。（定义的时候可以不加）
+
+拥有虚函数的类会自动生成一个虚函数表 `vtbl` （属于类而不是对象），是一个指针数组，里面的元素是虚函数的函数指针创建对象时，对象内部会自动生成一个虚表指针 `*vptr` （通常会在对象内存的最起始位置），指向类的虚表 `vtbl` 在调用虚函数时，会经由 `vptr` 找到 `vtbl` ，再通过 `vtbl` 中的函数指针找到对应虚函数的代码并进行调用。
+
+### override 重写
+
+在继承时，派生类会继承基类的虚表，虚函数继承之后仍是虚函数（不用加 `virtual` ）
+
+也可以重写虚函数：
+
+**注意，非虚函数不能重写！（不是override）**
+
+```cpp
+class A {
+public:
+virtual void vfunc1();
+virtual void vfunc2();
+void func1();
+void func2();
+private:
+int m_data1, m_data2;
+};
+class B : public A {
+public:
+void vfunc1() override; // 最好用override表达这个函数是继承而来的
+void func1();
+private:
+int m_data3;
+};
+class C: public B {
+public:
+void vfunc2() override;
+void func2();
+private:
+int m_data1, m_data4;
+};
+B bobject; // 类B的一个对象
+A* p = &bobject; // 通过基类指针*p指向派生类B的对象
+```
+
+### 静态绑定与动态绑定
+
+静态绑定(static/early binding)，在**编译**阶段决定函数是哪个类的函数（此时对象还未创建）适用于普通成员函数，根据指针自身的类型来决定
+
+动态绑定(dynamic/late binding)，在**运行**阶段决定函数是哪个类的函数，适用于虚函数，根据指针指向的对象的实际类型来决定（必须在指针指向的对象创建出来后才能决定，因此只能在运行阶段判断）。对于很多其它语言，默认为动态绑定
+
+```cpp
+class animal {
+public:
+void print() { cout << "I'm an animal." << endl; }
+virtual void vprint() { cout << "I'm an animal." << endl; }
+virtual ~animal() = default;
+};
+class dog : public animal {
+public:
+void print() { cout << "I'm a dog." << endl; } // 这是overwrite，不好
+void vprint() override{ cout << "I'm a dog." << endl; } // override
+virtual ~dog() = default;
+};
+int main() {
+dog D;
+animal* p = &D; // 基类指针指向派生类对象
+p->print(); // early binding，指针p为animal*类型，直接采用基类animal中的print()，
+跟派生类dog无关，无法做到多态
+// 被翻译为animal::print(p);
+p->vprint(); // late binding，指针p指向的对象为dog类型，故采用派生类dog中的
+vprint()而不是基类animal中的vprint()
+// 被翻译为( *(p->vptr)[0] )(p)，即( p->vtbl[0] )(p)
+// 原理：先通过指针p找到对象D，再通过对象D中的虚指针找到类dog的虚表，再到虚表里找到
+vprint()的函数指针
+return 0;
+}
+```
+
+### 纯虚函数
+
+在虚函数后加 `=0` ，如 `virtual void func()=0`，子类必须提供纯虚函数的个性化实现。
+
+定义纯虚函数是为了实现一个接口，起到一个规范的作用，规范继承这个类的派生类必须实现这个函数。
+
+使用纯虚函数，一般发生在基类无法提供合理的缺省实现的时候（否则用虚函数就行了）。
+
+纯虚函数没有body，只有声明，因此纯虚函数不能被直接调用；纯虚函数必须被override，若派生类没有给出实现，则其仍然为纯虚函数
+
+### abstract 抽象类
+
+只要类中有一个纯虚函数，那么就是抽象类，不能创建该类的对象，但可以创建指针；只能当做基类，是一个概念化的东西
+
+### 协议类
+
+类里没有非静态成员变量，而且所有成员函数都是纯虚函数，则称为协议类，可以安全地实现多继承
+
+### template 模版
+
+#### 
 
 
 # Others
