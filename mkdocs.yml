@@ -101,5 +101,7 @@ nav:
     - FDS: ds1.md
     - OOP: oop/class.md
     - 数字逻辑设计: 数逻/2048.md
+    - 计算机系统原理: 
+      - A4: 计原/A4/A4.md
   - notes: git.md
   
