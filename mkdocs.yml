@@ -100,5 +100,6 @@ nav:
   - SE:
     - FDS: ds1.md
     - OOP: oop/class.md
+    - 数字逻辑设计: 数逻/2048.md
   - notes: git.md
   
