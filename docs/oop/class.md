@@ -735,9 +735,65 @@ return 0;
 
 类里没有非静态成员变量，而且所有成员函数都是纯虚函数，则称为协议类，可以安全地实现多继承
 
-### template 模版
+### STL
 
-#### 
+#### std::sort
+
+使用 `sort` 需要添加头文件 `include <algorithm>`
+
+sort 可以对数组或者是vector等可以随机访问且元素可比较的数据结构进行排序，平均和最差复杂度均为 $O(nlogn)$
+
+```cpp
+#include <algorithm>
+#include <iostream>
+#include <vector>
+
+int main()
+{
+    using std::vector;
+    using std::cout;
+    using std::endl;
+
+    int s[] = {5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
+    vector<int> v = {5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
+
+    std::sort(s, s + 10);
+    for (int i : s) 
+        cout << i << " ";
+    cout << endl;
+
+    std::sort(v.begin(), v.end(), std::greater<int>());
+    for (int i : v) 
+        cout << i << " ";
+    cout << endl;
+}
+```
+output 如下：
+```cpp
+0 1 2 3 4 5 6 7 8 9 
+9 8 7 6 5 4 3 2 1 0 
+```
+
+- `std::sort(s, s + 10)` 表示对数组 s 的 $[s, s + 10)$区间进行排序。（这里没有做特别说明就是默认升序排序。
+- `std::sort(s, s + 10, std::greater<int>())` 表示排序时大的放前面（降序）
+- `std::sort(s, s + 10, cmp)` 加入比较函数，比较函数逻辑上`a 严格在 b 前面`，当两个函数相等时return false
+- 自定义比较函数可以适用更复杂的排序，例如需要比较的元素本身并没有内置的比较运算符的时候。
+
+```cpp
+bool cmp(const int& a, const int& b) { return a > b; }
+vector<int> v = {3, 1, 4, -2, 5, 3};
+sort(v.begin(), v.end(), cmp);
+```
+
+#### STL 都有什么
+
+##### 数据结构
+
+Sequence containers: vector, deque, array, list（双向链表）, forward_list
+
+![Alt text](image-2.png)
+
+Associative containers: set（红黑树）, map（字典）, multiset, multimap
 
 
 # Others
