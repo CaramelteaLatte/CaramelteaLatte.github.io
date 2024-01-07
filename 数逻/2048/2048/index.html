@@ -1,0 +1,805 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="ChenYixuan">
+      
+      
+        <link rel="canonical" href="https://carameltealatte.github.io/%E6%95%B0%E9%80%BB/2048/2048/">
+      
+      
+        <link rel="prev" href="../../../oop/class/">
+      
+      
+        <link rel="next" href="../../sum/sum/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>2048 - CaramelteaLatte O.o.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/card.css">
+    
+      <link rel="stylesheet" href="../../../css/flink.css">
+    
+      <link rel="stylesheet" href="../../../css/changelog_extra.css">
+    
+      <link rel="stylesheet" href="../../../css/counter.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="CaramelteaLatte O.o." class="md-header__button md-logo" aria-label="CaramelteaLatte O.o." data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CaramelteaLatte O.o.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2048
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../ds1/" class="md-tabs__link">
+          
+  
+    
+  
+  SE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../git/" class="md-tabs__link">
+        
+  
+    
+  
+  notes
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CaramelteaLatte O.o." class="md-nav__button md-logo" aria-label="CaramelteaLatte O.o." data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CaramelteaLatte O.o.
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    SE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ds1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../oop/class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数字逻辑设计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            数字逻辑设计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2048
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sum/sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<p>(封面等最后生成pdf的时候再插吧)</p>
+<h1 id="_1"><span id="jump0"></span><center>摘要</center><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>本次课程设计题目为 "2048" ，由传统的 2048 游戏移至 FPGA 板设计而成。这款游戏极好地还原了网页版 2048 游戏的基本特征和游戏规则，使用 sword 板显示得分，使用 PS2 操作整体的左移、右移，具有很强的可玩性。</p>
+<p>关键词：数字逻辑，游戏，2048，Verilog，IP Core，FPGA</p>
+<div STYLE="page-break-after: always;"></div>
+
+<h1 id="_2">目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<h2 id="_3"><a href="#jump0">摘要</a><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4"><a href="#jump1">第一章 绪论</a><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="11-fpga"><a href="#jump2">1.1 基于 FPGA 的游戏设计背景</a><a class="headerlink" href="#11-fpga" title="Permanent link">&para;</a></h3>
+<h3 id="12"><a href="#jump3">1.2 主要内容和难点</a><a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<h2 id="2048"><a href="#jump4">第二章 2048 游戏设计思路与原理</a><a class="headerlink" href="#2048" title="Permanent link">&para;</a></h2>
+<h3 id="21-fpga"><a href="#jump5">2.1 基于 FPGA 的游戏设计相关内容</a><a class="headerlink" href="#21-fpga" title="Permanent link">&para;</a></h3>
+<h3 id="22-fpga-2048"><a href="#jump6">2.2 基于 FPGA 的 2048 游戏设计方案</a><a class="headerlink" href="#22-fpga-2048" title="Permanent link">&para;</a></h3>
+<h2 id="2048_1"><a href="#jump7">第三章 2048游戏设计实现</a><a class="headerlink" href="#2048_1" title="Permanent link">&para;</a></h2>
+<h3 id="31"><a href="#jump8">3.1 实现过程</a><a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<h3 id="32"><a href="#jump9">3.2 调试过程</a><a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<h2 id="_5"><a href="#jump10">第四章 结果分析与用户反馈</a><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="41"><a href="#jump11">4.1 结果检验与功能测试</a><a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<h3 id="42"><a href="#jump12">4.2 用户体验与反馈</a><a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<h2 id="_6"><a href="#jump13">第五章 总结与致谢</a><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div STYLE="page-break-after: always;"></div>
+
+<h1 id="_7"><span id="jump1">第一章 绪论</span><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h2 id="11-fpga_1"><span id="jump2">1.1 基于 FPGA 的游戏设计背景</span><a class="headerlink" href="#11-fpga_1" title="Permanent link">&para;</a></h2>
+<p>Verilog HDL 是一种用于数字系统设计的语言。用 Verilog HDL 描述的电路设计就是
+该电路的 Verilog HDL 模型也称为模块。Verilog HDL 既是一种行为描述的语言也是一种
+结构描述的语言。这也就是说，无论描述电路功能行为的模块或描述元器件或较大部件互连
+的模块都可以用 Verilog 语言来建立电路模型。如果按照一定的规矩编写，功能行为模块可以通过工具自动地转换为门级互连模块。Verilog 模型可以是实际电路的不同级别的抽象。一个复杂电路系统的完整 Verilog HDL 模型是由若干个 Verilog HDL 模块构成的，每一个模块又可以由若干个子模块构成。其中有些模块需要综合成具体电路，而有些模块只是与用户所设计的模块有交互联系的现存电路或激励信号源。利用 Verilog HDL 语言结构所提供的这种功能就可以构造一个模块间的清晰层次结构来描述极其复杂的大型设计，并对所作设计的逻辑电路进行严格的验证。Verilog HDL 作为一种高级的硬件描述编程语言，与 C 语言的风格有许多类似之处。其中有许多语句如：if 语句、case 语句等和 C 语言中的对应语句十分相似。</p>
+<p>FPGA 即现场可编程门阵列，它是在 PAL、GAL、CPLD 等可编程器件的基础上进一步发展的产物。它是作为专用集成电路（ASIC）领域中的一种半定制电路而出现的，既解决了定制电路的不足，又克服了原有可编程器件门电路数有限的缺点。</p>
+<h2 id="12_1"><span id="jump3">1.2 主要内容和难点</span><a class="headerlink" href="#12_1" title="Permanent link">&para;</a></h2>
+<h3 id="111">1.1.1 主要内容<a class="headerlink" href="#111" title="Permanent link">&para;</a></h3>
+<p>2048 是一款数字益智游戏。在一个 4x4 的方格中，每一轮都会出现一个数值为 2 或 4 的方块。玩家通过控制键盘上的 WADS 滑动方块，当两个相同数值的方块在移动的过程中碰撞到一起时，它们会合并成一个数值加倍的方块，直到获得一个总值为 4096 的方块，游戏获胜。游戏并不会在达到 4096 后立即结束，玩家可以继续进行合并操作，尝试获得更高的分数。当无法进行有效的合并操作并且无法再移动方块时，游戏结束。游戏结束后，七段数码管显示玩家的最高分数。玩家可以选择按键 P 来重复尝试，获得新高。游戏的难度在于，在每一次滑动过后，系统会在随机空白位置添加新的随机数方块，玩家需要考虑每一步的移动，以避免方块填满整个方格且无法继续合并。</p>
+<h3 id="112">1.1.2 技术要求<a class="headerlink" href="#112" title="Permanent link">&para;</a></h3>
+<p>熟练掌握 Verilog 语言设计；掌握 SWORD 板的使用方法；掌握 VGA 显示原理和 PS2 键盘输入原理，理解并掌握状态机的设计。</p>
+<h3 id="113">1.1.3 实验目的<a class="headerlink" href="#113" title="Permanent link">&para;</a></h3>
+<p>加深对模块化编程的理解，加强对硬件编程语言 Verilog 的掌握。</p>
+<h3 id="114">1.1.4 实验重点与难点<a class="headerlink" href="#114" title="Permanent link">&para;</a></h3>
+<p>Coe 文件的生成与 IP 核的制作；键盘的输入；VGA 的正常显示。</p>
+<h1 id="2048_2"><span id="jump4">第二章 2048游戏设计思路与原理</span><a class="headerlink" href="#2048_2" title="Permanent link">&para;</a></h1>
+<h2 id="21-fpga_1"><span id="jump5">2.1 基于 FPGA 的游戏设计相关内容</span><a class="headerlink" href="#21-fpga_1" title="Permanent link">&para;</a></h2>
+<h3 id="211-vga">2.1.1 VGA 显示<a class="headerlink" href="#211-vga" title="Permanent link">&para;</a></h3>
+<p>VGA(Video Graphics Array)，信号类型为模拟类型，显示卡端的接口为 15 针母插
+座。VGA( Video Graphics Array)作为一种标准的显示接口得到了广泛的应用。VGA 在任何时刻都必须工作在某一显示模式之下，其显示模式分为字符显示模式和图形显示模
+式。而在应用中，讨论的都是图形显示模式。</p>
+<p>VGA 接口是一种 D 型接口，上面共有 15 针孔，分成三排，每排五个。其中比较重要
+的是 3 根 RGB 彩色分量信号和 2 根扫描同步信号 HSYNC 和 VSYNC 针。其引脚编号图如下图所示：</p>
+<p><img alt="Alt text" src="../image.png" /><img alt="Alt text" src="../image-1.png" /></p>
+<p>VGA 显示器扫描方式从屏幕左上角一点开始，从左向右逐点扫描，每扫描完一行,电子
+束回到屏幕的左边下一行的起始位置，在这期间，CRT 对电子束进行消隐，每行结束时，用行同步信号进行同步；当扫描完所有的行，形成一帧，用场同步信号进行场同步，并使扫描回到屏幕左上方，同时进行场消隐,开始下一帧。完成一行扫描的时间称为水平扫描时间，其倒数称为行频率；完成一帧（整屏）扫描的时间称为垂直扫描时间，其倒数称为场频率，即屏幕的刷新频率，常见的有 60Hz，75Hz 等等，但标准的 VGA 显示的场频 60Hz。其扫描示意图如下图所示：</p>
+<p><img alt="Alt text" src="../image-2.png" /></p>
+<p>VGA 的详细时序如下图所示：</p>
+<p><img alt="Alt text" src="../image-3.png" /></p>
+<p>总的来说，VGA 的时序主要包括行时序与场时序两个部分。</p>
+<p>其中行时序主要包括：行同步(Hor Sync)、行消隐(Hor Back Porch)、行视频有效
+(Hor Active Video)和行前肩(Hor Front Porch)这四个参数，行时序的时序图如下图所示：</p>
+<p><img alt="Alt text" src="../image-4.png" /></p>
+<p>而场时序主要包括：场同步(Ver Sync)、场消隐(Ver Back Porch)、场视频有效(Ver Active Video)和场前肩(Ver Front Porch)这四个参数，场时序的时序图如下图所示：</p>
+<p><img alt="Alt text" src="../image-5.png" /></p>
+<p>需要注意的有三点：
+- 行时序是以”像素”为单位的，场时序是以”行”为单位的。
+- VGA 工业标准显示模式要求：行同步，场同步都为负极性，即同步脉冲要求是负
+脉冲。
+- VGA 行时序对行同步时间、消隐时间、行视频有效时间和行前肩时间有特定的
+规范，场时序也是如此。常用 VGA 分辨率时序参数如下表所示：
+<img alt="Alt text" src="../image-6.png" /></p>
+<h3 id="212-ps2">2.1.2 PS2 键盘输入<a class="headerlink" href="#212-ps2" title="Permanent link">&para;</a></h3>
+<p>PS/2 通信协议是一种双向同步串行通信协议。通信的两端通过 CLOCK(时钟脚)同步，并
+通过国 DATA(数据脚)交换数据。一般两设备间传输数据的最大时钟频率是 33kHz，大多
+数 PS/2 设备工作在 10--20kHz。推荐值在 15kHz 左右，也就是说，CLOCK 高、低电平的持续时间都为 40us。每一数据帧包含 11-12 位，具体含义如下图所示：</p>
+<table>
+<thead>
+<tr>
+<th>数据</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1个起始位</td>
+<td>总是逻辑0</td>
+</tr>
+<tr>
+<td>8个数据位</td>
+<td>(LSB)低位在前</td>
+</tr>
+<tr>
+<td>1个奇偶检验位</td>
+<td>奇校验</td>
+</tr>
+<tr>
+<td>1个停止位</td>
+<td>总是逻辑1</td>
+</tr>
+<tr>
+<td>1个应答位</td>
+<td>仅用在主机对设备的通信中</td>
+</tr>
+</tbody>
+</table>
+<p>数据在 PS/2 时钟的下降沿读取，PS/2 的时钟频率为 10—16.7kHz。对于 PS/2 设备，一般来说从时钟脉冲的上升沿到一个数据转变的时间至少要有 5us；数据变化到下降沿的时间至少要有 5us，并且不大于 25us，这个时序非常重要应该严格遵循。主机可以再第 11 个时钟脉冲停止位之前把时钟线拉低，使设备放弃发送当前字节，当然这种情况比较少见。在停止位发送后设备在发送下个包前应该至少等待 50us，给主机时间做相应的处理。不过主机处理接收到的字节时一般会抑制发送(主机在收到每个包时通常自动做这个)。在主机释放抑制后，设备至少应该在发送任何数据前等 50us。</p>
+<h3 id="213">2.1.3 可编辑阵列逻辑<a class="headerlink" href="#213" title="Permanent link">&para;</a></h3>
+<p>PAL 器件由可编程的与阵列、固定的或阵列和输出反馈单元组成。不同型号 PAL 器件有
+不同的可编程阵列逻辑输出和反馈结构，适用于各种组合逻辑电路和时序逻辑电路的设
+计，是一种可程式化的装置。PLA 具有一组可程式化的 AND 阶，AND 阶之后连接一组可
+程式化的 OR 阶，如此可以达到：只在合乎设定条件时才允许产生逻辑讯号输出。
+PLA 如此的逻辑闸布局能用来规划大量的逻辑函式，这些逻辑函式必须先以积项（有时
+是多个积项）的原始形式进行齐一化。在 PLA 的应用中，有一种是用来控制资料路径，
+在指令集内事先定义好逻辑状态，并用此来产生下一个逻辑状态（透过条件分支）。
+举例来说，如果目前机器（指整个逻辑系统）处于二号状态，如果接下来的执行指令中
+含有一个立即值（侦测到立即值的栏位）时，机器就从第二状态转成四号状态，并且也
+可以进一步定义进入第四状态后的接续动作。因此 PLA 等于扮演（晶片）系统内含的逻
+辑状态图（state diagram）角色。</p>
+<h3 id="214">2.1.4 硬件描述语言<a class="headerlink" href="#214" title="Permanent link">&para;</a></h3>
+<p>Verilog HDL 是一种用于数字系统设计的语言。用 Verilog HDL 描述的电路设计就是
+该电路的 Verilog HDL 模型也称为模块。Verilog HDL 既是一种行为描述的语言也是一种结构描述的语言。这也就是说，无论描述电路功能行为的模块或描述元器件或较大部件互连的模块都可以用 Verilog 语言来建立电路模型。如果按照一定的规矩编写，功能行为模块可以通过工具自动地转换为门级互连模块。Verilog 模型可以是实际电路的不同级别的抽象。一个复杂电路系统的完整 Verilog HDL 模型是由若干个 Verilog HDL 模块构成的，每一个模块又可以由若干个子模块构成。其中有些模块需要综合成具体电路，而有些模块只是与用户所设计的模块有交互联系的现存电路或激励信号源。利用 Verilog HDL 语言结构所提供的这种功能就可以构造一个模块间的清晰层次结构来描述极其复杂的大型设计，并对所作设计的逻辑电路进行严格的验证。Verilog HDL 作为一种高级的硬件描述编程语言，与 C 语言的风格有许多类似之处。其中有许多语句如：if 语句、case 语句等和 C 语言中的对应语句十分相似。</p>
+<h3 id="215">2.1.5 技术工具<a class="headerlink" href="#215" title="Permanent link">&para;</a></h3>
+<h4 id="1-ise">1. ISE 软件<a class="headerlink" href="#1-ise" title="Permanent link">&para;</a></h4>
+<p>ISE 是使用 XILINX 的 FPGA 的必备的设计工具。它可以完成 FPGA 开发的全部流
+程，包括设计输入、仿真、综合、布局布线、生成 BIT 文件、配置以及在线调试等，
+功能非常强大。ISE 除了功能完整，使用方便外，它的设计性能也非常好，以集成
+的时序收敛流程整合了增强性物理综合优化，提供最佳的时钟布局、更好的封装和
+时序收敛映射，从而获得更高的设计性能。</p>
+<h4 id="2-sword">2. SWORD 板<a class="headerlink" href="#2-sword" title="Permanent link">&para;</a></h4>
+<h4 id="3">3. 计算机<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<h4 id="4-wps-office">4. WPS Office<a class="headerlink" href="#4-wps-office" title="Permanent link">&para;</a></h4>
+<p>用于对图片进行美术处理和加工，同时对图片像素进行适当裁剪以适应 VGA 显示。</p>
+<h4 id="5-python">5. Python<a class="headerlink" href="#5-python" title="Permanent link">&para;</a></h4>
+<p>通过编写 Python 爬虫程序，爬取<a href="https://play2048.co/">网页版游戏 2048</a> 上相关资料与图片素材，以便后续处理使用。</p>
+<p>通过编写 Python 程序，把 png 图片转为 3 位 16 进制 coe 文件，使之与 VGA 显示相适应。</p>
+<h3 id="216">2.1.6 课程设计方法<a class="headerlink" href="#216" title="Permanent link">&para;</a></h3>
+<p>利用 Verilog HDL 硬件设计游戏，通过 WPS 设计游戏游戏画面和贴画，通过Python编写程序实现素材爬取和 coe 文件生成，实现用 PS2 键盘输入数据，用VGA 显示数据，使用 ISE 软件生成 bit 文件，利用可编程阵列逻辑烧在 SWORD 实验电路板上，最终实现人机互动游戏。</p>
+<h2 id="22-fpga-2048_1"><span id="jump6">2.2 基于 FPGA 的 2048 游戏设计方案</span><a class="headerlink" href="#22-fpga-2048_1" title="Permanent link">&para;</a></h2>
+<h3 id="221">2.2.1 技术需求<a class="headerlink" href="#221" title="Permanent link">&para;</a></h3>
+<p>VGA 扫描显示欢迎界面，游戏界面以及结束界面；PS2 键盘输入数据处理为控制方块移动方向信号、界面切换信号；核心模块对输入信号用状态机进行逻辑处理，输出。</p>
+<h1 id="2048_3"><span id="jump7">第三章 2048 游戏设计实现</span><a class="headerlink" href="#2048_3" title="Permanent link">&para;</a></h1>
+<h2 id="31_1"><span id="jump8">3.1 实现过程</span><a class="headerlink" href="#31_1" title="Permanent link">&para;</a></h2>
+<h2 id="32_1"><span id="jump9">3.2 调试过程</span><a class="headerlink" href="#32_1" title="Permanent link">&para;</a></h2>
+<h1 id="_8"><span id="jump10">第四章 结果分析与用户反馈</span><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<h2 id="41_1"><span id="jump11">4.1 结果检验与功能测试</span><a class="headerlink" href="#41_1" title="Permanent link">&para;</a></h2>
+<h2 id="42_1"><span id="jump12">4.2 用户体验与反馈</span><a class="headerlink" href="#42_1" title="Permanent link">&para;</a></h2>
+<h1 id="_9"><span id="jump13">第五章 总结与致谢</span><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AnyaReese/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
