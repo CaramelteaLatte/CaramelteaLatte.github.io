@@ -32,6 +32,77 @@ input, output, definiteness确定性（每条指令都是清晰的没有歧义�
   ```
 - ![](1.png)
 
+## Tree
+
+- 一个 node 的 degree 是这个 node 的 child 个数，一棵树的 degree 是这棵树里面所有 node 的 degree 的最大值。
+- 从节点 n<sub>1</sub>, n<sub>k</sub> 的路径定义为一个一个序列，这条路径是唯一的。
+- deep：从跟到该节点唯一路径的长度
+- height：从该节点到一片树叶的最长路径的长度
+
+### binary tree
+
+对每一个二叉树：
+- 深度 k 的二叉树最多有 2<sup>k</sup> - 1 个节点
+- 对任何非空二叉树有 n<sub>0</sub> = n<sub>2</sub> + 1
+
+- preorder
+```c
+void preorder(tree* tree){
+  if(tree){
+    visit(tree);
+    for(each child of the tree) preorder(child);
+  }
+}
+```
+- postorder
+```c
+void postorder(tree* tree){
+  if(tree){
+    for(each child in the tree) postorder(child);
+    visit(tree);
+  }
+}
+```
+- levelorder
+```c
+void leveorder(tree* tree){
+  enqueue(tree);
+  while(queue is not empty){
+    visit(T = dequeue());
+    for(eaach child in the tree) enqueue(child);
+  }
+}
+```
+- inorder
+```c
+void inorder(tree* tree){
+  if(tree){
+    inorder(tree->left);
+    visit(tree->element);
+    inorder(tree->right);
+  }
+}
+```
+
+#### Thread binary tree 线索二叉树
+
+![Alt text](image-4.png)
+
+#### Binary serach tree 二叉搜索树
+
+- 所有节点 element 不相同
+- 左子树的 element < element < 右子树的 element
+
+### stack
+
+对于我们来说只有pop，push的操作，只有头结点可见
+
+struct里面，总容量（用于判断），目前容量，头结点
+
+### Heap
+
+
+
 ## Sort
 
 ### ShellSort
@@ -107,9 +178,9 @@ key和区间右端比较，如果右端 >key（符合条件），则区间右端
 
 ### Hashing
 
-二分查找树时间复杂度NlogN建树+logN查找，对于大数据来说太慢，而hash对于大量的数据，查找复杂度一直是O(1).
+二分查找树时间复杂度NlogN建树+logN查找，对于大数据来说太慢，而hash对于大量的数据，查找复杂度一直是O(1).（无冲突）
 
-hash: 知道key找到index，由key映射index。
+hash: 知道key找到index，由key映射index。(函数)
 
 - collision：一个key查找到了两个index。
 - overflow：溢出，桶放满了。
@@ -117,4 +188,23 @@ hash: 知道key找到index，由key映射index。
 
 **hash：选择合适的bucket和slot大小+设计key映射index的函数+桶排序+一个桶内链表**
 
+#### 如何构造一个哈希函数
 
+ascii 码，平方取中法（但是我感觉这个很随意吧）
+
+#### 如何处理一次 collision
+
+- 线性寻址open addressing：当这个位置冲突了就往后寻址，直到找到空的格子放进去
+  - 平方探测： 
+    - size = 4k + 3 且 size 是素数，平方探测可以探测到整个空间
+  - 双散列double hashing
+![Alt text](image-3.png)
+以H2为步长往后移，
+  - rehashing
+    - 影响（装填因子）arpha = identifier density = total number of identifiers in ht[ ] / total number of distinct possible values for x. 已占有空间除以全部空间
+    - 当 arpha 在范围 [0.5,0.85] 的时候必须要使用rehashing（在一个更大的空间里面重开hash）
+    - 重开，空间范围要扩大，扩大的空间是原来的空间乘2然后往上取最近一个素数
+    - 重开是在第一次hash之后的小数组基础上进行的，不在小数组内的数字按照原数组里面的顺序取
+  - seperate chaining
+    - 复杂度不再是 O（1）
+    - 

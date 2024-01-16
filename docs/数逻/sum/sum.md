@@ -300,12 +300,242 @@ SR 锁存器使用或非门， S'R' 锁存器使用与非门，SR 当输入为 0
 带控制输入的SR锁存器，当 C 为 1 能写入，C 为 0 时锁存。
 ![Alt text](image-17.png)
 
-### flipflop 触发器
+## flipflop 触发器
 
-master-slave 主从触发器
+- 在有脉冲（高电平）时，修改第一个锁存器的值，保持第二个锁存器的值；在没有脉冲（低电平）时候保持第一个锁存器的值，修改第二个锁存器的值，更新触发器的状态，即 **主从式(master-slave)触发器**；
+- 仅在时钟的边缘触发，即在特定时刻仅接受一个输入，即 **边沿触发式(edge-triggered)触发器**；
+  
+> 边沿触发式 D 触发器是目前使用最广泛的触发器。
 
-- 在有脉冲（高电平）时，修改第一个锁存器的值，保持第二个锁存器的值；在没有脉冲（低电平）时候保持第一个锁存器的值，修改第二个锁存器的值，更新触发器的状态，即 主从式(master-slave)触发器；
-- 仅在时钟的边缘触发，即在特定时刻仅接受一个输入，即 边沿触发式(edge-triggered)触发器；
+### SR 主从触发器
+
+![](13.png)
+
+使用一对 gated D-latches，来记录和分隔*next* state 和 *current* state
+
+- 当clock初置1时，master的we端口为1，slave的we端口为0，master 读入状态，slave 保持状态。
+
+- 当clock又置为0时，slave的we端口为0，master的we端口为1，则slave记录了上一个阶段（clock为1时）的读入数据
+
+**NOTE 1:** JK 触发器（注意是与非门）
+
+![Alt text](image-25.png)![Alt text](image-26.png)
+
+JK触发器是SR触发器基础上的改进，其中即使S=R=1也无关紧要
+
+- 当 J 与 K 输入数据不同，那么输出 Q 会在下一个时钟沿取 J 的值
+- 当 J 与 K 输入数据相同且都为高电位时，输出结果互换（0变1，1变0）
+- 当 J 与 K 输入数据相同且都为低电位时，结果保持。
+
+**NOTE 2:** T 触发器
+
+![Alt text](image-27.png)
+
+只有一个输入 T ，将 JK 触发器的 J 端和 K 端相接。
+
+- 当 T = 0，输出保持
+- 当 T = 1，输出结果反转（0变成1，,变成0）
+
+### 边沿触发式触发器
+
+![Alt text](image-19.png)
+
+如图为上升沿触发的 D 触发器。
+
+**NOTE:**
+
+触发器的基本描述方法：
+- 理论分析中：状态表(Characteristic Table, or State Table)用输入和当前状态来描述下一状态。
+- 工程设计中：激励表(Excitation Table)用当前状态和下一状态来描述输入（展示从当前状态转移到下一状态所需要的输入）。
+
+## 时序电路分析
+
+### 触发器的输入方程 flip-flop input equation
+
+![Alt text](image-20.png)
+
+D<sub>A</sub> = AX + BX
+
+D<sub>B</sub> = AbaX
+
+Y = (A + B)Xba
+
+### 状态表 state table
+
+present state, input, next state, output
+
+对 D<sub>A</sub>: A(t + 1) = D<sub>A</sub> = A(t)X + B(t)X
+
+D<sub>B</sub>: B(t + 1) = D<sub>B</sub> = A(t)baX
+
+于是我们可以画状态图：
+
+| Present State | Input | Next State | Output |
+| :--: | :--: | :--: | :--: |
+| `AB` | `X` | `AB` | `Y` |
+| `00` | `1` | `00` | `0` |
+|`00`|`0`|`01`|`0`|
+|`01`|`0`|`00`|`1`|
+|`01`|`1`|`11`|`0`|
+|`10`|`0`|`00`|`1`|
+|`10`|`1`|`10`|`0`|
+|`11`|`0`|`00`|`1`|
+|`11`|`1`|`10`|`0`|
+
+- **Mealy model circuit**：输出依赖当前状态与输入；
+- **Moore model circuit**：输出不依赖输入只依赖当前状态。
+  
+### 状态表 state diagram
+
+比如说这张图是上一张表（米勒型）对应的图：
+
+![Alt text](image-21.png)
+
+而摩尔型的状态图就非常简单：
+
+![Alt text](image-22.png)
+
+### 等价状态 equivalent state
+
+> 对于两个状态，如果它们对于同一输入序列的响应是完全相同的（包括相同的输出和相同的状态转移），那么这两个状态是等价的。
+
+#### 未简化的状态图
+
+![Alt text](image-23.png)
+
+状态 S2 和 S3 对于输入 `0` 输出为 `1`，下一状态为 S0；对于输入 `1`，相应的输出都是 `0`，下一状态都是 S2。所以 S2 和 S3 是等价状态。我们可以把这两个等价状态简化成同一个状态，记为 S2。
+
+更进一步地，我们注意到 S1 和新的 S2 也是等价状态，我们继续化简它们。
+
+![Alt text](image-24.png)
+
+# Chap 5 Digital Hardware Implementation
+
+## MOS 管
+
+### NMOS PMOS
+
+NMOS 画法前面没有取反的圆圈，表示它在X=1时接通；PMOS相反。
+
+![Alt text](image-28.png)
+
+接下来我们可以使用 NMOS 和 PMOS 管来进行一些逻辑的设计。我们用并联表示相加，用串联表示相乘。
+
+![Alt text](image-29.png)
+
+> 左图实现了 Xba*Yba，右图实现了X + Y
+
+### CMOS 结构设计
+
+![Alt text](image-30.png)
+
+>首先让我们来看图(a)，这是 CMOS 的通用结构（可以被称作 static CMOS）。其可以分为上下两部分，上半部分接电源，由 PMOS 设计出 F 的逻辑；下半部分接地，由 NMOS 设计出 Fba 的逻辑。也就是说 CMOS 同时需要实现 F 和 Fba，这就是其名称 complementary 的由来。
+
+**CMOS 在结构上的最大特征是，其 PMOS 的电路和 NMOS 的电路是对偶的，这使得我们只需要设计两者中的一个，就可以直接利用对偶得到另外一个。（但是建议从下面开始设计）**
+
+## 可编程技术
+
+### 在硬件层面的三种实现手段
+
+- Control Connections
+  - Mask programing
+  - Fuse（高电压切断部分电路）
+  - Anti-fuse(高电压联通部分电路)
+  - Single-bit storage element
+- Lookup Tables
+  - Storage elements for the function
+    - 比如使用一个 `MUX`，并将输入端接内存，通过修改内存的值来修改 `MUX` 的行为，进而实现函数重编程
+- Control transistor switching 控制晶体管开关
+
+### 分类
+
+- permanent 永久编程技术：出厂后经过一次变成，便永久成型
+  - Mask programming
+  - Fuse
+  - Anti-fuse
+- reprogrammable 可重编程技术：允许重复编程
+  - Volatile:断电后编成信息会消失
+    - Single-bit storage element
+  - Non-volatile:编程信息仅在擦除操作后才会消失，不受断电影响
+    - FLASH （memory）
+
+### 常见的可编程技术
+
+#### 1. ROM 只读内存
+
+![Alt text](image-31.png)
+
+- $2^{N} * M$ ROM 由 N 个输入，M 个输出，以及 $2^{N}$ 个译码后的最小项组成。
+- 固定的 AND 用于设计译码器，实现所有的 2的n次方个最小项
+- 可编程的 OR 用于把这些最小项“或”起来并实现特定逻辑
+- PROM 通过 fuse 或者 anti-fuse 等手段实现可编程，所以在出厂后仅可进行一次编程修改，属于永久编程技术
+- ROM 的输入提供了一串地址，输出则是这组地址对应内存中存储的信息。
+
+#### 2. PAL 可编程阵列逻辑 Array Logic
+
+- 不需要列出所有最小项，是可优化的，但也因此不一定能表达所有逻辑
+- 具有固定的 OR 和一批可编程的 AND
+- 一种可行的处理方案是把一个既有的 PAL 输出当做输入，输入到另外一个函数中，来弥补项不足的问题
+  
+#### 3. PLA 可编程逻辑阵列 Logic Array
+
+- PLA 与 ROM 类似，使用译码器 + OR
+- PLA 不使用译码器获得所有的最小项，而是使用可编程的 AND 阵列来替代译码器
+- PLA 具有可编程的 AND 和 OR，因此比起 PAL 和 ROM 更具灵活性。单音词他的优化会变得更加麻烦
+- 同时 PLA 和 PAL 一样不能完全表达所有的逻辑，一种改进方法是，在输出的时候再做一次异或，就能够产生新的项来弥补逻辑不能完全表达的问题。（不用非门体现了可编程的思想）
+
+# Chap 6 Register & Register Transfers
+
+- 触发器 + 对应的状态控制电路 = 实现多位数据存储
+- counter：随时钟周期按照固定的轨迹循环。
+- 新数据被写入寄存器叫做 **Load**，载入操作在同一个时钟脉冲内完成叫做 **Parallel 并行**
+
+## 保持
+
+我们希望寄存器在不需要的时候保持而不是读入：
+
+### Plan A: Clock gating 门控时钟
+
+让它选择性地跟随时钟脉冲切换状态。
+
+（下图中是或门）
+![Alt text](image-32.png)
+
+当 Load = 0时，始终有 control 信号为 1，脉冲消失，寄存器无法被载入
+
+*NOTE: 但由于多添加了一个逻辑门，时钟脉冲到达 control 的时候会出现额外的传播延时，即时钟偏移 clock skew。实际设计中我们要尽量避免。*
+
+### Plan B：在它不需要修改的时候不停地将它的输入载入。（保持）
+
+通过一个 `MUX` 来选择，用 `EN` 使能端来控制载入新值还是保持旧值。
+
+![Alt text](image-34.png)
+
+## 寄存器单元
+
+Register Cell：FF + 实现其组合逻辑的组合电路
+
+## Register transfer 寄存器传输
+
+用一个控制单元来控制数据通路。control unit，datapath。
+
+register transfer operations：load，clear，shift，count
+
+3个基本部分：set of registers，operations，controlof operations
+
+最基础的（elementary）部分叫做微操作，microoperation
+
+## 寄存器传输语言 notation
+
+- 子母和数字表示一个寄存器
+- 括号表示寄存器位数
+- 箭头表示数据传输
+- 逗号代表并行操作
+- 中括号（brackets）代表一个内存地址
+![Alt text](image-35.png)
+
+
+
 
 
 
