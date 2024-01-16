@@ -32,6 +32,21 @@ input, output, definiteness确定性（每条指令都是清晰的没有歧义�
   ```
 - ![](1.png)
 
+### 一些碎碎念的复杂度
+
+- 数组
+  - 插入元素到末尾：O(1)
+  - 找到最大或最小的元素：O(n), 删除元素移动数组O(n)
+- 链表
+  - 插入元素到链表开头或结尾：O(1)
+  - 找到最大或最小元素：O(n), 删除元素O(1)
+- 有序数组
+  - 插入找到合适位置O(n), 移动数组并插入元素O(n)
+  - 删除开头或末尾元素O(1)
+- 有序链表
+  - 插入找到合适的位置O(n), 插入元素O(1)
+  - 删除开头或末尾元素O(1)
+
 ## Tree
 
 - 一个 node 的 degree 是这个 node 的 child 个数，一棵树的 degree 是这棵树里面所有 node 的 degree 的最大值。
@@ -84,7 +99,7 @@ void inorder(tree* tree){
 }
 ```
 
-#### Thread binary tree 线索二叉树
+#### Threaded binary tree 线索二叉树
 
 ![Alt text](image-4.png)
 
@@ -99,9 +114,164 @@ void inorder(tree* tree){
 
 struct里面，总容量（用于判断），目前容量，头结点
 
-### Heap
+### Heap (Priority Queue)
+
+#### Binary heap
+
+n nodes, height h
+
+height 从 0 开始，下图中 height 是 3.
+
+![Alt text](image-5.png)
+
+一个高度 h 的完全二叉树 complete binary tree 可以有 2<sup>h</sup> 到 2<sup>h+1</sup>-1 个节点。
+
+#### max/min heap
+
+> A min tree is a tree in which the key value in each node is no larger than the key values in its children (if any).  
+
+min heap：父节点的值小于等于子节点的值
+
+#### Insertion
+
+```c
+void insert(elementype x, heap h)
+{
+  int i;
+  if(isfull(h)){
+    return;/报错输出
+  }
+  for(i = ++h->size; h->element[i/2] > x; i /= 2){
+    h->elemnt[i] = h->element[i/2];
+  }
+  h->element[i] = x;
+}
+```
+
+#### DeleteMin
+
+先把最后一个 element 放到首位，然后进行 percolate up down
+
+```c
+elementype DeleteMin(heap h)
+{
+  elementype minelement, lastelement;
+  if(isempty(h)){
+    return h->element[0];//
+  }
+  minelement = h->element[1];
+  lastelemnt = h->element[h->size--];
+  for(int i = 2; i * 2 <= h->size; i = child){
+    child = i * 2;
+    if(child != h->size && h->element[child+1] < h->element[child]){
+      child++;//找到一个smaller的child节点
+    }
+    if(lastelement > h->element[child]){
+      h->element[i] = h->element[child];//percolate一层
+    }else break;//找到了一个合理的位置
+  }
+  h->element[i] = lastelement;
+  return minelement;
+} 
+```
+
+**Theorem: 对于一个高度为 h 的完美二叉树 perfect binary tree，他有 2<sup>h+1</sup>-1 nodes，所有 nodes 的 height 之和为 2<sup>h+1</sup>-1-(h+1)**
+
+#### d-Heaps (all nodes have d children)
+
+![Alt text](image-6.png)
+
+注意我们不能将 d 设置过大。对binary(2)的乘除只是一个 bit shift，但对 d 的操作不是；DeleteMin will take d - 1 comparisons to find the smallest child.  Hence the total time complexity would be O(d logd N).
+
+### Union find
+
+#### Union-by-Size
+
+总是选择smaller tree
+
+S [ Root ] = – size;  /* initialized to be –1 */
+
+时间复杂度：N Union 和 M Find 的操作需要O(N + Mlog<sub>2</sub>N)
+
+#### Union-by-height
+
+总是选择 shallow tree
+
+#### Path Compression 路径压缩
+
+```c
+setype find(elementype x, disset s)
+{
+  for(root = x; s[root] > 0; root = s[root]);
+  for(tail = x; tail != root; root = lead){
+    lead = s[trail];
+    s[trail] = root;
+  }
+  return root;
+
+}
+```
+
+## Graph
+
+- 连通分量 component of an undirected G
+- 强连通分量 strongly connected directed graph
+- i is a predeceddor of j:= there is a path from i to j, j is called a successor
+- partial order偏序 transitive and irreflective
+
+### Euler circuits
+
+- Euler tour: 不间断一笔连
+  - 一张图里正好有两个有奇数度的节点，必须由奇数度数出发并且终止与奇数度数
+- Euler circuit：不间断一笔连但是要求要回到起点
+  - 这是一个连通图，并且这张图的所有节点都偶数度数
+
+### Hamilton circle
+
+一个简单circle经过所有的节点
+
+![Alt text](image-11.png)
 
 
+
+### topological sort
+
+```c
+void topsort(graph g){
+  int counter;
+  vertex v, w;
+for(counter = 0; counter < numvertex; counter ++){
+  v = findnewvertexofdegreezero();
+  if(v == notavertex){
+
+  }
+  topnum[v] = counter;
+  for(each w adjacent to v){
+    indegree[w]--;
+  }
+}
+}
+```
+
+![Alt text](image-7.png)
+
+### shortest path algorithm
+
+#### unweighted
+
+一层一层，深度优先
+
+需要变量，known，path，dist
+
+![Alt text](image-8.png)
+
+![Alt text](image-9.png)
+
+#### weighted
+
+dijkstra's algorithm
+
+![Alt text](image-10.png)
 
 ## Sort
 
@@ -173,6 +343,173 @@ key和区间右端比较，如果右端 >key（符合条件），则区间右端
 对这个位置的左右两个子段进行相同的操作，直到子段内元素个数为1，说明整个数列已经完全有序。
 
 注意，如果是key取num[first]，（说明first的位置可以被覆盖），那么key的比较应当从区间右端开始，再左端，再往复循环。
+
+#### 复杂度分析
+
+
+
+### Merge Sort
+
+分左右部分分别 mergesort
+
+- 递归归并排序算法：
+```c
+function merge_sort(arr, start, end):
+    if start >= end:
+        return arr
+
+    mid = (start + end) / 2
+
+    merge_sort(arr, start, mid)
+    merge_sort(arr, mid+1, end)
+    merge(arr, start, mid, end)
+
+    return arr
+```
+```c
+void MergeSort(int Arr[], int N) {
+    int *Temp = (int *)malloc(N * sizeof(int));
+    if (Temp != NULL) {
+        Sort(Arr, Temp, 0, N-1);
+        free(Temp);
+    } else {
+        printf("No space for temp array!!!");
+    }
+}
+// 递归排序
+void Sort(int Arr[], int Temp[], int left, int right) {
+    if (left < right) {
+        int mid = (left + right) / 2;
+        Sort(Arr, Temp, left, mid);
+        Sort(Arr, Temp, mid+1, right);
+        Merge(Arr, Temp, left, mid, right);
+    } else {
+        return ;
+    }
+}
+// 归并
+void Merge(int Arr[], int Temp[], int left, int mid, int right) {
+    int l_pos = left;
+    int r_pos = mid+1;
+    int i = left;
+
+    while (l_pos <= mid && r_pos <= right) {
+        if (Arr[l_pos] <= Arr[r_pos]) {
+            Temp[i] = Arr[l_pos];
+            i++;
+            l_pos++;
+        } else {
+            Temp[i] = Arr[r_pos];
+            i++;
+            r_pos++;
+        }
+    }
+
+    while (l_pos <= mid) {
+        Temp[i++] = Arr[l_pos++];
+    }
+    while (r_pos <= right) {
+        Temp[i++] = Arr[r_pos++];
+    }
+
+    while (left <= right) {
+        Arr[left] = Temp[left];
+        left++;
+    }
+}
+```
+
+- 迭代算法
+```c
+function merge_sort(arr):
+    length = 1
+    n = length(arr)
+    sorted = new array of size n
+
+    while length < n:
+        for start = 0 to n - length step 2 * length:
+            mid = start + length - 1
+            end = min(start + 2 * length - 1, n - 1)
+            merge(arr, sorted, start, mid, end)
+
+        copy sorted to arr
+
+        length = 2 * length
+
+    return arr
+```
+```c
+void  merge_sort( ElementType list[],  int N )
+{
+    ElementType extra[MAXN];  /* the extra space required */
+    int  length = 1;  /* current length of sublist being merged */
+    while( length < N ) {
+        merge_pass( list, extra, N, length ); /* merge list into extra */
+        length *= 2;
+    }
+}
+void merge_pass(ElementType list[], ElementType sorted[], int N, int length) {
+    int i, j, k = 0;
+
+    for (i = 0; i <= N - 2 * length; i += 2 * length) { // complete 2 equal length
+        int left = i;
+        int right = i + 2 * length - 1;
+        int mid = (right + left) / 2;
+        int l_pos = left;
+        int r_pos = mid + 1;
+
+        if (right >= N) {
+            right = N - 1;
+        }
+
+        while (l_pos <= mid && r_pos <= right) { //
+            if (list[l_pos] < list[r_pos]) {
+                sorted[k++] = list[l_pos++];
+            } else {
+                sorted[k++] = list[r_pos++];
+            }
+        }
+
+        while (l_pos <= mid) {
+            sorted[k++] = list[l_pos++];
+        }
+        while (r_pos <= right) {
+            sorted[k++] = list[r_pos++];
+        }
+
+    }
+
+    /* 最后进行一次归并剩余元素 */
+    int left = i;
+    int mid = i + length - 1;
+    int right = N - 1;
+
+    /* 归并操作 */
+    k = left;  /* k 用于遍历 sorted[] 数组 */
+    int l = left;  /* l 用于遍历左半边子序列 list[left:mid] */
+    int r = mid + 1;  /* r 用于遍历右半边子序列 list[mid+1:right] */
+
+    while (l <= mid && r <= right) {
+        if (list[l] <= list[r]) {
+            sorted[k++] = list[l++];
+        } else {
+            sorted[k++] = list[r++];
+        }
+    }
+
+    while (l <= mid) {
+        sorted[k++] = list[l++];
+    }
+
+    while (r <= right) {
+        sorted[k++] = list[r++];
+    }
+
+    for (j = 0; j < N; j++) {
+        list[j] = sorted[j];
+    }
+}
+```
 
 ## Search
 
