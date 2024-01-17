@@ -516,7 +516,7 @@ void merge_pass(ElementType list[], ElementType sorted[], int N, int length) {
 
 LSD 按照最小的位来排；MSD 按照最大的位来排
 
-![Alt text](image-13.png)
+![Alt text](image-13.png)                                  
 
 
 ## Search
