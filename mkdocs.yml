@@ -4,7 +4,7 @@ site_url: https://carameltealatte.github.io
 theme: 
   name: material  
   language: zh    
-  favicon: assets/favicon.ico
+  favicon: assets/image/favicon.ico
   features:  #导航
     - navigation.instant  #即时加载
     - navigation.tracking  #锚点跟踪
