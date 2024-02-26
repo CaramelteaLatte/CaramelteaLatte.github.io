@@ -98,7 +98,7 @@ plugins:
 nav:
   - Home: index.md
   - SE:
-    - FDS: ds1.md
+    - FDS: fds/ds1.md
     - OOP: oop/class.md
     - 数字逻辑设计: 
       - 2048: 数逻/2048/2048.md
