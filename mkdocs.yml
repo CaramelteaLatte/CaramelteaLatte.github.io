@@ -103,5 +103,9 @@ nav:
     - 数字逻辑设计: 
       - 2048: 数逻/2048/2048.md
       - 复习: 数逻/sum/sum.md
+  - ODD:
+    - Python:
+      - Class(xdq): py/class.md
+      - Others: py/others.md
   - notes: git.md
   
