@@ -314,3 +314,24 @@ s[0]='k' # 报错
 s='hello'
 s='bye' # 正确修改字符串
 ```
+
+**3. 字符串查找子串：find()**
+
+- 在字符串中查找子串，返回的是第一次出现的位置的下标（从0开始），找不到返回-1
+```python
+s = 'This is a test.'
+print(s.find('is')) # 2 find 与 index 一致在重复元素，但find 能对不存在的元素返回-1而index不能
+print(s.index('is')) # 2
+print(s.find('OK')) # -1
+print(s.find('is',3)) # 5 3表示范围从index为3开始，不包括3
+print(s.find('is',3,6)) # -1 表示范围在index3到6，不包括3和6
+```
+
+**4. 统计次数：count()**
+
+真的很字面意思啊，，
+
+```python
+s='This is a test.'
+print(s.count('is')) # 2
+```
