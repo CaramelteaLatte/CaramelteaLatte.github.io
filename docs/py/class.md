@@ -220,6 +220,8 @@ print(fac)
 
 `print("{0:.2f} {1:.2f}".format(x,y))`
 
+`{}` 表示占位符，format后跟填写的内容，0和1(:前)表示索引序列
+
 #### 1.5.5 位运算
 
 & 位与，| 位或，^ 位异或，~ 位01取反，<< 位左移，>> 位右移
@@ -334,4 +336,51 @@ print(s.find('is',3,6)) # -1 表示范围在index3到6，不包括3和6
 ```python
 s='This is a test.'
 print(s.count('is')) # 2
+```
+
+**5. 修改大小写**
+
+```python
+name = 'john s'
+print(name.title()) # John S 修改首字母
+print(name.upper()) # JOHN S
+print(name.lower()) # john s
+```
+
+**6. 删除空格**
+
+```python
+name=" python "
+print(name.strip())  # 'python'
+print(name.lstrip()) # 'python '
+print(name.rstrip()) # ' python'
+```
+
+**7. 替换子串**
+
+```python
+s='This is a test.'
+t=s.replace('is','eez')
+print(t) # Theez eez a test
+```
+
+#### 1.6.3 列表和元组
+
+**1. 列表创建**
+
+- 字面：`a=[2.3.7]`
+
+- `list()` 函数：`a=list('hello')` 或者 `a=list(range(1,10,2))`
+
+- 矩阵表示：
+`matrix=[[1,2,3],[3,4,5],[5,6,7]]`，访问使用 `matrix[0][0]`
+
+**2. 元素赋值**
+
+列表元素可以被修改
+
+```python
+a=[1,2,3,4,5]
+a[0]=2
+print(a) # [2,2,3,4,5]
 ```
