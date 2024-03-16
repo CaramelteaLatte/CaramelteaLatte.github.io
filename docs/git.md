@@ -9,6 +9,11 @@
 - `git config --global user.name "name"` 
 - `git config --global user.email "email"`
 
+### git ssh
+
+- `git remote add add origin git@github.com:xxx` ssh认证
+- `git remote -v` 检查是否连上
+
 ### github update
 
 - `git add .`将整个仓库内容上传至暂存区
@@ -18,6 +23,8 @@
 
 ### git clone
  
+- `git clone xxx` 
+
 ## ssh 端口 22 connection time out
 
 换端口443，具体操作：
