@@ -103,6 +103,11 @@ nav:
     - 数字逻辑设计: 
       - 2048: 数逻/2048/2048.md
       - 复习: 数逻/sum/sum.md
+    - ADS:
+      - AVL Tree and Splay Tree: AVL tree and Splay tree.pdf
+      - Inverted File Index: Inverted file index.pdf
+      - Leftist Tree and Skew Tree: Leftist tree and skew tree.pdf
+      - Binomial Queue: Binomial queue.pdf
   - ODD:
     - Python:
       - Class(xdq): py/class.md
