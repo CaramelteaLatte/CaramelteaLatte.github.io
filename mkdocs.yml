@@ -104,10 +104,10 @@ nav:
       - 2048: 数逻/2048/2048.md
       - 复习: 数逻/sum/sum.md
     - ADS:
-      - AVL Tree and Splay Tree: AVL tree and Splay tree.pdf
-      - Inverted File Index: Inverted file index.pdf
-      - Leftist Tree and Skew Tree: Leftist tree and skew tree.pdf
-      - Binomial Queue: Binomial queue.pdf
+      - AVL Tree and Splay Tree: ads/AVL tree and Splay tree.pdf
+      - Inverted File Index: ads/Inverted file index.pdf
+      - Leftist Tree and Skew Tree: ads/Leftist tree and skew tree.pdf
+      - Binomial Queue: ads/Binomial queue.pdf
   - ODD:
     - Python:
       - Class(xdq): py/class.md
