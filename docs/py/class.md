@@ -369,7 +369,27 @@ t=s.replace('is','eez')
 print(t) # Theez eez a test
 ```
 
-#### 1.6.3 列表和元组
+**8. 数字转换字符串**
+
+`str()`:
+```python
+age = 23	
+print('Happy Birthday '+ str(age) +'!') # Happy Birthday 23!
+```
+
+`format()`:
+```python
+age = 23
+print('Happy Birthday {}!'.format(age)) # Happy Birthday 23!
+```
+多个空就多个format允许，如：
+```python
+print('My name is {}, age {}'.format('Mary','18')) # My name is Mary, age 18
+# 第二个format直接写18不写'18'也可以
+```
+
+
+#### 1.6.3 列表
 
 **1. 列表创建**
 
@@ -380,6 +400,21 @@ print(t) # Theez eez a test
 - 矩阵表示：
 `matrix=[[1,2,3],[3,4,5],[5,6,7]]`，访问使用 `matrix[0][0]`
 
+*输入一串数字空格隔开，输出排序后的数字*
+```python
+nums = input()
+numl = [int(n) for n in nums.split()]
+numl.sort()
+print(numl)
+```
+
+- 使用 `append()` 函数
+```python
+lst = []
+for i in range(4):
+  lst.append(input())
+```
+
 **2. 元素赋值**
 
 列表元素可以被修改
@@ -389,3 +424,127 @@ a=[1,2,3,4,5]
 a[0]=2
 print(a) # [2,2,3,4,5]
 ```
+
+可以用 `del()` 语句删除列表中的元素
+
+```python
+name = ['Alice', 'Kim', 'Karl', 'John']
+del name[2]
+print(name) # ['Alice', 'Kim', 'John']
+```
+
+**3. 切片赋值**
+
+感觉就是把多个元素当成一个切片去用，跟元素赋值一样
+
+```python
+name = list('Perl')
+name[2:] = list('ar')
+print(name) # ['P', 'e', 'a', 'r']
+```
+
+**4. 列表函数**
+
+| 函数 | 描述 | 使用 | 说明 |
+| -- | -- | -- | -- |
+| l.append(x) | 在列表尾部追加元素 x | `l.append(13)` |
+| l.clear() | 清空 |
+| l.count(x) | 计算 x 出现次数 | 
+| l.copy() | 列表的备份 | `a = c.copy()` | id 不同，作用相当于对 c 取全部切片 |
+| l.extend(x) | 将列表 x 扩充到列表 l 中 | `l.extend([13,17])` |
+| l.index(value,start,end) | 计算指定范围内 value 出现的第一个下标 |
+| l.insert(index,x) | 在下标index位置插入x | `l.insert(2,4)`, `l.insert(12,3)` | 指定插入的位置不存在，则插入到最后 | `a.index(3)` | 寻找 3 的下标 |
+| l.pop(index) | 返回并删除index处的元素 | `a.pop()`, `a.pop(2)` | 不带参数时候默认弹出最后一个元素 |
+| l.remove(value) | 删除值为value的第一个元素 |
+| l.reverse() | 倒置列表 | `a.reverse()` |
+| l.sort() | 对列表元素进行排序 |
+
+**5. 字符串和列表的相互操作**
+
+`split()` 函数：不带参数表示用空格来划分，带参数则用参数划分。
+
+```python
+date = '3/11/2018'
+a = date.split('/')
+print(a) # ['3', '11', '2018']
+```
+
+`join()` 函数：参数表示中间用什么东西来间隔
+
+```python
+a = ['hello','good','boy','wii']
+print(' '.join(a)) # hello good boy wii
+print(':'.join(a)) # hello:good:boy:wii
+```
+
+#### 1.6.4 元组
+
+元组不可修改，可以任何类型、任何数量。
+
+**1. 元组创建**
+
+用元组的字面量：`d = (100,20)`
+
+用 `tuple()` 函数：`a = tuple([2,3,5,7,11])`
+
+**2. 常用函数**
+
+元组不可修改，所以大部分对元组都不适用
+
+| 函数 | 描述 | 使用 | 备注 |
+| -- | -- | -- | -- |
+| t.count(x) | 计算x的出现次数 |
+| t.index(x) | 计算x的出现下标 |
+
+**3.一些案例**
+
+*输入字符串，排序后按从小到大输出每个字符及该字符在原字符串中的索引。*
+```python
+s = input()
+lst = [(s[index], index) for index in range(len(s))]
+lst.sort()
+print(lst)
+```
+
+*列表加元素表述二维表格*
+```python
+students = [(3180102988,"褚好"),
+          (3170102465,"王凯亮"),
+          (3160104456,"李永"),
+          (3171104169,"陈鑫"),
+          (318400429,"徐杭诚")]
+for row in students: # 按行存取
+  print(row[0],row[1])
+print()
+
+for id, name in students: # 按行拆包存取
+  print(id, name)
+print()
+
+for index in range(len(students)):
+  print(students[index][0],students[index][1])
+
+```
+
+#### 1.6.5 随机函数库
+
+使用 `import random` 来导入random随机函数库
+
+| 函数名 | 含义 | 使用 | 备注 |
+| -- | -- | -- | -- |
+| random.random() | 返回一个在[0,1)之间的数字 |
+| random.uniform(a,b) | 返回一个在[a,b]之间的浮点数 |
+| random.randint(a,b) | 返回一个在[a,b]之间的整数 |
+| random.randrange(start,stop,step) | 在指定范围内返回一个随机数 |
+| random.choice(sequences) | 从序列中随机返回一个数字 |
+| random.shuffle(x) | 将列表x中顺序打乱 |
+| random.sample(sequence,k) | 从一个序列中随机获得一个长度为k的序列并随机排序 |
+| random.seed(n) | 对随机数生成器初始化，n表示随机种子。参数为空时随机种子为系统时间 |
+
+*掷硬币，正面向上的概率是多少？*
+```python
+import random
+t = [random.randint(0,1) for i in range(10000)]
+print(sum(test) / len(test)) # 0.5006
+```
+
