@@ -553,4 +553,6 @@ ascii 码，平方取中法（但是我感觉这个很随意吧）
   - seperate chaining
     - 复杂度不再是 O（1）
   
-![alt text](a2fbc4fa894a14ad84b27ec26ce731a.png)
+![alt text](d49ff5ec10646af0d2d0dcec9c986dd.png)
+
+![alt text](adc9b9bb029c635872b77ae4c569fcd.png)
