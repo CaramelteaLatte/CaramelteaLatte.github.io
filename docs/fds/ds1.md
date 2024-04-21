@@ -552,4 +552,5 @@ ascii 码，平方取中法（但是我感觉这个很随意吧）
     - 重开是在第一次hash之后的小数组基础上进行的，不在小数组内的数字按照原数组里面的顺序取
   - seperate chaining
     - 复杂度不再是 O（1）
-    - 
+  
+![alt text](a2fbc4fa894a14ad84b27ec26ce731a.png)
