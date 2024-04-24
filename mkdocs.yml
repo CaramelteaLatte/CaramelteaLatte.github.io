@@ -112,5 +112,6 @@ nav:
     - Python:
       - Class(xdq): py/class.md
       - Others: py/others.md
+    - 离散数学: 离散数学电信/ls.md
   - notes: git.md
   
