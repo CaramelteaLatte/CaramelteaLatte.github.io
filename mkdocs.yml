@@ -113,5 +113,6 @@ nav:
       - Class(xdq): py/class.md
       - Others: py/others.md
     - 离散数学: 离散数学电信/ls.md
+    - 信息安全原理: 信安原.md
   - notes: git.md
   
