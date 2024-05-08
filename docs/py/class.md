@@ -313,7 +313,7 @@ a,*b=grade # a=70, b=[80,65,78]
 - `print(3 in a)` True
 - `[2,3] in a` False
 - `[2,3] in [[2,3],4,5,11,13]` True
- 
+
 **5. 获取索引：**
 
 - 获取一个元素的下标。
@@ -570,3 +570,59 @@ t = [random.randint(0,1) for i in range(10000)]
 print(sum(test) / len(test)) # 0.5006
 ```
 
+#### 1.6.6 集合
+
+set，一类容器，**无序**，元素值不可重复（如果重复的话python会把重复的直接消除）
+
+**列表等可变对象不能做集合的元素**
+
+**1. 集合创建**
+
+- 直接给变量赋值：` fruit = {'apple', 'orange', 'pear', 'banana'}`
+- 使用 `set()` 创建空集合
+  - 也可以将列表或元组转换为集合
+
+**2. 操作集合的元素**
+
+| 函数    | 说明 |
+| ------- | ---- |
+| `len()` |      |
+| `min()` |      |
+| `max()`       |      |
+| `sum()` |      |
+| `add()` | `s.add(3)`，把元素3加入到集合 s 中 |
+| `remove()` | `s.remove(3)`，删除元素3。如果不存在抛出KeyError异常 |
+|         |      |
+
+- 用循环遍历：`for x in s` 集合无序，输出结果也无序
+- `in` ，`not in ` 可判断
+- `s1.issubset(s2)` 或 `s1.issuperset(s2)` 判断子集或超集
+  - 返回 True False
+- `==` , `!=` 判断元素
+- `<`, `<=` , `>`, `>=` 真子集，子集，真超集，超集
+
+**3. 集合运算**
+
+| 函数                      | 运算符   | 说明                                       |
+| ------------------------- | -------- | ------------------------------------------ |
+| `union()`                 | `|` 或   | 并集                                       |
+| `intersection()`          | `&` 与   | 交集                                       |
+| `difference()`            | `-` 减   | 差集                                       |
+| `symmertric_difference()` | `^` 异或 | 对称性，结果是除了一个共同元素外的所有元素 |
+
+**4. 一些案例**
+
+*找指定范围内的质数*
+
+```python
+import math
+m=int(input())
+primes=set(2,m+1)
+for i in range(2, int(math.sqrt(m))+1):
+    if i in primes:
+        primes=primes-set(range(i*i,m+1,i))
+        
+print(primes)
+```
+
+#### 1.6.7 字典
