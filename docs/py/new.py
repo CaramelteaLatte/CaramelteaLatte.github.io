@@ -1,2 +1,1 @@
-i=97.6
-print(int(i))
+print(bin(31))

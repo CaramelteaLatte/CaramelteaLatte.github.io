@@ -626,3 +626,230 @@ print(primes)
 ```
 
 #### 1.6.7 字典
+
+### 1.7 函数
+
+#### 1.7.1 定义
+
+- 内置函数：`len()`
+- 自定义函数：先定义，才能使用
+```python
+def f(x):
+  value=x**2+1
+  return value
+n=int(input())
+y=f(x)
+print(y)
+```
+
+**函数是一种对象：有id，type，value**
+
+#### 1.7.2 参数
+
+**1. 位置参数**
+
+传入参数按照顺序复制上去。
+
+```python
+from math import sqrt
+def dis(x1,y1,x2,y2):
+  print("x1={},y1={},x2={},y2={}".format(x1,y1,x2,y2)) 
+  return sqrt((x1-x2)**2+(y1-y2)**2)
+print(dis(1,3,4,5))
+```
+
+**2. 关键字参数**
+
+如位置参数，添加具体顺序调用：
+```python
+....
+print(dis(x1=1,y2=5,y1=3,x2=4))
+```
+
+**当同时存在位置和关键词参数时，要先写位置参数再写关键词参数。**
+```python
+...
+print(dis(1,3,y2=5,x2=4))
+```
+
+**3. 默认值参数**
+当调用方没有提供对应的参数值时，你可以指定默认参数值。如果你提供参数值，在调用时会代替默认值。
+```python
+from math import sqrt
+def	dis(x1,y1,x2,y2=5): #求平 面上两点距离  
+    print("x1={},y1={},x2={},y2={}".format(x1,y1,x2,y2)) 
+    return sqrt((x1-x2)**2+(y1-y2)**2)
+print(dis(1,3,4))
+```
+
+**4. 不定长数目参数**
+当函数参数数目不确定时，星号将一组可变数量的位置参数集合成参数值的元组。
+
+```python
+def countnum(a,*b): #计算参数个数
+  print(b)
+  print(len(b)+1)
+countnum(3,7,9)
+countnum(5,8,1,6,89)
+```
+
+输出：
+```python
+(7, 9)      #以元组的形式存放
+3
+(8, 1, 6, 89)
+5
+```
+
+**一个星号表示输出到元组，两个星号表示输出到字典**
+
+```python
+def countnum(a,**d): #计算参数个数
+    print(d)
+    print(len(d)+1)
+countnum(3,x1=9,x2=1,x3=6,x4=89)
+```
+
+输出：
+```python
+{'x1': 9, 'x2': 1, 'x3': 6, 'x4': 89}
+5
+```
+
+
+**5. print 参数**
+
+- `print(*object, sep=" ", end="\n", file=sys.stdout)`
+  - object: 输出参数, sys.stdout：输出到屏幕
+- `I=[2,7,5]`
+  - `print(I)` ，输出 [2,7,5]
+  - `print(*I)`，输出 2 7 5
+- *表示将序列拆成一个个单独的实参，而**则表示将字典拆成一个个单独的带变量名的实参.
+
+#### 1.7.3 返回值
+
+return
+
+**匿名函数：lambda表达式**
+
+lambda 用来编写简单的函数，而def用来处理更强大的任务的函数。
+
+```python
+g = lambda x,y,z : x+y+z    
+#把lambda定义的匿名函数赋给函数g
+print(g(1,4,5))
+```
+
+全局变与局部变量，global 关键字
+
+#### 1.7.4 递归
+
+斐波那契：
+
+```python
+def fib(n):
+  if n == 0 or  n == 1:
+    return 1
+  else:
+    return fib(n-1)+fib(n-2)
+print(fib(4))
+```
+
+*卧槽。。。。*
+
+动态规划
+
+```python
+pre = {o:1, 1:1}
+def fib(n):
+  if n in pre:
+    return pre[n]
+  else:
+    newvalue = fib(n-1)+fib(n-2)
+    pre[n] = newvalue
+    return newvalue
+print(fib(100))
+# 感觉也不是很dynamic programming，只是拿了一个字典（数组）来记录不用每次都递归罢了
+```
+
+#### 1.7.5 内置函数
+
+**sorted:** 对于列表有用
+
+sort(iterable, key, reverse)
+```python
+students = [('江幸',89, 15), (' 方鹏',80, 14), ('陈可', 85, 14)] #第二个分量是成绩，第三个分量是年龄
+print(sorted(students, key=lambda s: s[2])) # 按年龄从小到大排序
+# [(' 方鹏', 80, 14), ('陈可', 85, 14), ('江幸', 89, 15)]
+print(sorted(students, key=lambda s: s[1], reverse=True))# 按成绩从大到小降序
+# [('江幸', 89, 15), ('陈可', 85, 14), (' 方鹏', 80, 14)]
+```
+
+
+**map:** 多用于input
+```python
+print(list(map(lambda x: x ** 2, [1, 2, 3, 4, 5]))) # 使用 lambda 匿名函数
+# [1, 4, 9, 16, 25]
+```
+```python
+print(list(map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])))
+# 提供了两个列表，对相同位置的列表数据进行相加
+# [3, 7, 11, 15, 19]
+```
+
+**zip:**
+```python
+a = [1,2,3]
+b = [4,5,6]
+c = [4,5,6,7,8]
+print(list(zip(a,b))) # [(1, 4), (2, 5), (3, 6)]
+print(list(zip(a,c))) # 元素个数与最短的列表一致
+# [(1, 4), (2, 5), (3, 6)]
+```
+或者字典键值互换
+```python
+d={'blue':500,'red':100,'white':300} 
+d1=dict(zip(d.values(),d.keys())
+print(d1)
+# {500: 'blue', 100: 'red', 300: 'white'}
+```
+
+**eval:**
+```python
+x,y=3,7
+eval(‘x+3*y-4’)
+# 20
+```
+
+**exec:**
+```python
+exec(‘print(“hello world”)’)
+Hello world 
+```
+
+**all:**
+```python
+n=47
+print(all([1 if n%k!=0 else 0 for k in range(2,n)])) #True
+n=15
+print(all([1 if n%k!=0 else 0 for k in range(2,n)])) #False
+```
+
+**any:**
+```python
+any([[],False,0])   #空列表和0都表示False
+#False
+```
+
+### 1.8 程序模块
+
+```
+import  模块名
+import  模块名 as 别名 
+from  模块名 import  *
+这种方法引入模块中的所有函数，调用的时候不需要再加模块名
+from  模块名 import  函数名
+这种方法引入模块中的单个函数，调用的时候也不需要再加模块名
+del 模块名       删除引入的模块名
+```
+
