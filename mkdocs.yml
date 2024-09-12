@@ -115,6 +115,7 @@ nav:
       - NP Completeness: ads/NP completeness.pdf
       - Approximation: ads/Approximation.pdf
       - Parallel Algorithm: ads/Parallel Algorithms.pdf
+    - OS: os/os.md
   - ODD:
     - Python:
       - Class(xdq): py/class.md
