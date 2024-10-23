@@ -115,7 +115,10 @@ nav:
       - NP Completeness: ads/NP completeness.pdf
       - Approximation: ads/Approximation.pdf
       - Parallel Algorithm: ads/Parallel Algorithms.pdf
-    - OS: os/os.md
+    - OS: 
+      - class: os/os.md
+      - PPT 习题: os/ppt习题.md
+    - JAVA: java/java.md
   - ODD:
     - Python:
       - Class(xdq): py/class.md
