@@ -40,7 +40,7 @@ final
 
 ### data types
 
-![image-20241218191819236](E:\3up\Java\assets\image-20241218191819236.png)
+![image-20241218191819236](.\assets\image-20241218191819236.png)
 
 - 整型的范围具有可移植性
 
@@ -87,7 +87,7 @@ literal
 
 函数：currentTimeMillis()
 
-![image-20241218192921944](E:\3up\Java\assets\image-20241218192921944.png)
+![image-20241218192921944](.\assets\image-20241218192921944.png)
 
 ### 类型转化
 
@@ -123,8 +123,8 @@ literal
 - Integer Overflow
 - Round-off Errors
 - Unintended Integer Division
-  - ![image-20241218201926711](E:\3up\Java\assets\image-20241218201926711.png)
-  - ![image-20241218201944080](E:\3up\Java\assets\image-20241218201944080.png)
+  - ![image-20241218201926711](.\assets\image-20241218201926711.png)
+  - ![image-20241218201944080](.\assets\image-20241218201944080.png)
 
 
 
@@ -179,7 +179,7 @@ literal
 
   - && ||: 短路的方式求值
     - 如果第一个操作数已经能够确定表达式的值，第二个操作数就不必计算了
-  - ![image-20241218205604621](E:\3up\Java\assets\image-20241218205604621.png)
+  - ![image-20241218205604621](.\assets\image-20241218205604621.png)
 
 ### switch语句
 
@@ -273,7 +273,7 @@ System.out.println((num % 2 == 0)? num + “is even” :num + “is odd”);
 - char letter = '\u0041'; (Unicode)
   - \u 表示十六进制
 - 常用
-  - ![image-20241218211836196](E:\3up\Java\assets\image-20241218211836196.png)
+  - ![image-20241218211836196](.\assets\image-20241218211836196.png)
 
 
 
@@ -428,7 +428,7 @@ for (char c : "Zhejiang University".toCharArray()){
 
 **存在编译错误**：编译器以为这个方法可以没有返回值
 
-![image-20241219141542742](E:\3up\Java\assets\image-20241219141542742.png)
+![image-20241219141542742](.\assets\image-20241219141542742.png)
 
 ### Reuse Methods from Other Classes
 
@@ -438,7 +438,7 @@ for (char c : "Zhejiang University".toCharArray()){
 
 了解 call stack 的过程，形参和实参在 stack 中分开
 
-![image-20241219141830542](E:\3up\Java\assets\image-20241219141830542.png)
+![image-20241219141830542](.\assets\image-20241219141830542.png)
 
 ### overloading
 
@@ -491,7 +491,7 @@ ps: **static** 修饰 method
 
 main 方法只是一个很普通的方法
 
-![image-20241219151306272](E:\3up\Java\assets\image-20241219151306272.png)
+![image-20241219151306272](.\assets\image-20241219151306272.png)
 
 ## 7 Single-Dimensional Arrays
 
@@ -633,7 +633,7 @@ public static int[] reverse(int[] list){
   - `dataType[][] refVar = new dataType[10][10];`
   - `dataType refVar[][] = new dataType[10][10];`
 
-![image-20241219153755852](E:\3up\Java\assets\image-20241219153755852.png)
+![image-20241219153755852](.\assets\image-20241219153755852.png)
 
 ### length
 
@@ -721,7 +721,7 @@ Circle(double newRadius) {
 
 但不是 看到 null 就直接回收了 ，是看到系统资源去看情况回收
 
-![image-20241219171114048](E:\3up\Java\assets\image-20241219171114048.png)
+![image-20241219171114048](.\assets\image-20241219171114048.png)
 
 防止内存泄漏，pop 出来但 reference 还是指向它，要把reference 指向设置到 null
 
@@ -738,7 +738,7 @@ Circle(double newRadius) {
 - static 方法只能访问 static 变量和方法
 - instance 方法能访问 instance 和 static 变量和方法
 
-![image-20241219171627512](E:\3up\Java\assets\image-20241219171627512.png)
+![image-20241219171627512](.\assets\image-20241219171627512.png)
 
 *感觉上是拿 static 作为全局的*
 
@@ -862,7 +862,7 @@ public class Circle {
 - builder
   - 多个 constructor 参数
   - 重叠构造器
-    - ![image-20241219192245015](E:\3up\Java\assets\image-20241219192245015.png)
+    - ![image-20241219192245015](.\assets\image-20241219192245015.png)
     - 缺点：难阅读，导致认为的微妙错误
   - 无参构造器
     - 调用 setter 方法来设置每一个必要的参数和可选参数
@@ -924,10 +924,10 @@ aggregation 是一种特殊的 association，composition 是一种特殊的 aggr
 - association：两个objects之间有关系
   - 可以一对一一对多多对一多对多
 - aggregation：一个object可以有另一个object
-  - 符号：![image-20241219195016450](E:\3up\Java\assets\image-20241219195016450.png)
+  - 符号：![image-20241219195016450](.\assets\image-20241219195016450.png)
   - 右侧是拥有侧
 - composition：一个object离开了另一个object不存在
-  - 符号：![image-20241219195110196](E:\3up\Java\assets\image-20241219195110196.png)
+  - 符号：![image-20241219195110196](.\assets\image-20241219195110196.png)
   - 右侧是存在的条件（父体）
 
 ### wrapper class 封装类
@@ -964,7 +964,7 @@ aggregation 是一种特殊的 association，composition 是一种特殊的 aggr
 
 - Interned Strings 驻留的
 
-  - ![image-20241219201148207](E:\3up\Java\assets\image-20241219201148207.png)
+  - ![image-20241219201148207](.\assets\image-20241219201148207.png)
   - 对于 s3，不会重新创建，只会将reference 指向s1
   - 是s1!=s2，但s1.equal(s2)是true，equal只比较内容
   - 节约底层空间
@@ -1005,7 +1005,7 @@ s1 == s6 true;
 
   - 缓存
 
-    - ![image-20241219202657718](E:\3up\Java\assets\image-20241219202657718.png)
+    - ![image-20241219202657718](.\assets\image-20241219202657718.png)
 
   - Double类型是没有缓存的，所以就会有如下结果
 
@@ -1017,7 +1017,7 @@ s1 == s6 true;
 
   - Integer利用**缓存**机制实现了常量池，缓存了256个对象，主要是常用的证书
 
-  - ![image-20241219202909369](E:\3up\Java\assets\image-20241219202909369.png)
+  - ![image-20241219202909369](.\assets\image-20241219202909369.png)
 
 ### string操作
 
@@ -1027,7 +1027,7 @@ s1 == s6 true;
 - 匹配 match
 - 正则表达式 regular expression
 
-![image-20241219205550081](E:\3up\Java\assets\image-20241219205550081.png)
+![image-20241219205550081](.\assets\image-20241219205550081.png)
 
 - Convert Character and Numbers to Strings
 
@@ -1037,7 +1037,7 @@ s1 == s6 true;
 
 - string格式化
   - `String s = String.format(“%7.2f%6d-4s”,45.556, 14, “AB”);`
-  - ![image-20241219204915108](E:\3up\Java\assets\image-20241219204915108.png)
+  - ![image-20241219204915108](.\assets\image-20241219204915108.png)
 
 - 不以null为结尾
 - Java中的String不可改变，是**final类型**
@@ -1095,17 +1095,17 @@ public enum Light{
       }
       ```
 
-    - ![image-20241219211538033](E:\3up\Java\assets\image-20241219211538033.png)
+    - ![image-20241219211538033](.\assets\image-20241219211538033.png)
 
 - enum类型可以关联不同的数据，也可以添加任意的方法和域，来增强枚举类型
 
-![image-20241219212605966](E:\3up\Java\assets\image-20241219212605966.png)
+![image-20241219212605966](.\assets\image-20241219212605966.png)
 
 答案 4 PLUS 2 = 6
 
 等等
 
-![image-20241219212753545](E:\3up\Java\assets\image-20241219212753545.png)
+![image-20241219212753545](.\assets\image-20241219212753545.png)
 
 这个valueOf填不出来
 
@@ -1133,11 +1133,11 @@ superclass 父类
   - 使用到子类1->找子类1的constructor->找父类的constructor->找父类的父类的constructor（直到没有父类）->执行父类的父类的constructor->执行父类的constructor->执行子类1的constructor
 - error：有参无参要一致
 
-![image-20241220154859828](E:\3up\Java\assets\image-20241220154859828.png)
+![image-20241220154859828](.\assets\image-20241220154859828.png)
 
 调用 apple 的构造函数是无参的，要先调用fruit的构造函数，蛋fruit的是有参的
 
-![image-20241220155137913](E:\3up\Java\assets\image-20241220155137913.png)
+![image-20241220155137913](.\assets\image-20241220155137913.png)
 
 原因：没有使用super去调用，默认无参
 
@@ -1164,7 +1164,7 @@ superclass 父类
 - Dynamic Binding 动态绑定
   - 如图是一个继承关系，c1是c2的子类，往后类推
   - 这里我们要先把cn看成是 object
-  - ![image-20241220161516482](E:\3up\Java\assets\image-20241220161516482.png)
+  - ![image-20241220161516482](.\assets\image-20241220161516482.png)
   - 对Cn o = new C1():
   - JVM会从C1开始寻找某个方法P直到找到一个具体的实现为止，然后搜索停止，调用第一个找到的方法
 
@@ -1174,7 +1174,7 @@ superclass 父类
   - 绑定
     - 在运行的时候去动态绑定
 
-![image-20241220162059677](E:\3up\Java\assets\image-20241220162059677.png)
+![image-20241220162059677](.\assets\image-20241220162059677.png)
 
 m(x) 使用匹配，使用哪个 tostring 是动态绑定
 
@@ -1261,7 +1261,7 @@ public class Child extends Basel {
 
 *好难.....*
 
-![image-20241220165939564](E:\3up\Java\assets\image-20241220165939564.png)
+![image-20241220165939564](.\assets\image-20241220165939564.png)
 
 **父类往上找，一直找到变量里跟它关系最大（相关度最高）的父类，运行它，结束。如果有两个父类跟他关系一样大，就选择更小的父类（更靠近他的父类）。**
 
@@ -1280,14 +1280,14 @@ public class Child extends Basel {
   - 重写
 
     - 内容是不是一样的
-    - ![image-20241220171006706](E:\3up\Java\assets\image-20241220171006706.png)
+    - ![image-20241220171006706](.\assets\image-20241220171006706.png)
 
 - protected 修饰符
 
   - 可以被一个package里面的类访问，在不同package里面如果是子类想要访问就也可以被访问
   - Protected的一个用法：模板方法（动态绑定
 
-  ![image-20241220171512025](E:\3up\Java\assets\image-20241220171512025.png)
+  ![image-20241220171512025](.\assets\image-20241220171512025.png)
 
   - 子类不会 waken 它的 accessibility
 
