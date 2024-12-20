@@ -40,7 +40,7 @@ final
 
 ### data types
 
-![image-20241218191819236](assets\image-20241218191819236.png)
+![image-20241218191819236](assets/image-20241218191819236.png)
 
 - 整型的范围具有可移植性
 
