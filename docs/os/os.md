@@ -1160,7 +1160,56 @@ request-request algorithm
 
 ### File Concept
 
+- 在存储介质里规定如何存储和获取数据的方法
+  - File naming、Where files are placed 、Metadata、Access rules
+- 连续的地址空间
+
+- file attributes
+  - name，identifier，type，location，size， protection
+  - kept in the directory structure
+
+- open-file table
+
+  - open() system call returns a pointer to an entry in the open-file table
+
+  - per-process table 针对每个process
+
+  - system-wide table 全局的表格
+
+- open file
+
+  - 文件指针，放在per-process
+  - 文件打开计数器，放在 system-wide，文件打开的册数，来允许在最后一个进程关闭打开的文件表时从该表中删除数据
+  - 实际在磁盘的位置
+  - access rights
+  
+- open file locking
+  - 强制锁 mandatory
+  - 建议锁 advisory  
+  
+
 ### Access Methods
+
+- sequential access
+
+```
+read next
+write next
+reset
+no read after last write (rewrite)
+```
+
+- direct(random) access
+
+```
+read n
+write n
+position to n
+	read next
+	write next
+rewrite n
+(n = relative block number)
+```
 
 ### Directory Structure
 
@@ -1171,6 +1220,8 @@ directory: a symbol table
 directory structure 和 files 都放在磁盘上
 
 #### A Typical File-system Organization
+
+物理上概念叫disk 逻辑上卷volume，partiton对应一个volume
 
 ![image-20241209103606286](D:\VScode\mkdocs\docs\os\assets\image-20241209103606286.png)
 
@@ -1210,16 +1261,26 @@ Each directory entry contains a bit defining the entry as file(0) or directory(1
 
 #### Acyclic-Graph Directories
 
-也可以叫 aliasing
+也可以叫 aliasing，防止cycle
 
 文件共享的需求，有共享子目录和文件
 
 ![image-20241209104812435](D:\VScode\mkdocs\docs\os\assets\image-20241209104812435.png)
 
+#### Soft (Symbolic) Link vs. Hard Link
 
-
+- soft link
+  - a separate file，通过它的path指向它
+  - 有自己的 inode(FCB)，它的数据就是 path
+  - span file systems
+- hard links
+  - an additional name for an existing file
+  - hard link 和 original file 都指向同一个 inode（FCB)
+  - 不能阻止 cycle
 
 ### File-System Mounting
+
+
 
 ### File Sharing
 

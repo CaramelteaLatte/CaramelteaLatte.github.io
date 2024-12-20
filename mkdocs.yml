@@ -123,6 +123,8 @@ nav:
     - Python:
       - Class(xdq): py/class.md
       - Others: py/others.md
+    - JAVA:
+      - Class: java/java.md
     - 信息安全原理: 信安原.md
   - notes: git.md
   
