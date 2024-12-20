@@ -1,0 +1,2022 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="ChenYixuan">
+      
+      
+        <link rel="canonical" href="https://carameltealatte.github.io/%E6%95%B0%E9%80%BB/sum/sum/">
+      
+      
+        <link rel="prev" href="../../2048/2048/">
+      
+      
+        <link rel="next" href="../../../ads/AVL%20tree%20and%20Splay%20tree.pdf">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>复习 - CaramelteaLatte O.o.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../css/card.css">
+    
+      <link rel="stylesheet" href="../../../css/flink.css">
+    
+      <link rel="stylesheet" href="../../../css/changelog_extra.css">
+    
+      <link rel="stylesheet" href="../../../css/counter.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chap-1-digital-systems-and-information" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="CaramelteaLatte O.o." class="md-header__button md-logo" aria-label="CaramelteaLatte O.o." data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CaramelteaLatte O.o.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              复习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../fds/ds1/" class="md-tabs__link">
+          
+  
+    
+  
+  SE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../py/class/" class="md-tabs__link">
+          
+  
+    
+  
+  ODD
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../git/" class="md-tabs__link">
+        
+  
+    
+  
+  notes
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CaramelteaLatte O.o." class="md-nav__button md-logo" aria-label="CaramelteaLatte O.o." data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CaramelteaLatte O.o.
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    SE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fds/ds1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../oop/class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数字逻辑设计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            数字逻辑设计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2048/2048/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2048
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    复习
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    复习
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息表达
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算机系统抽象层
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字系统
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      BCD 码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excess-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      余三码（EXCESS 3）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gray-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      格雷码(Gray Codes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="格雷码(Gray Codes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      格雷码与二进制的转化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="格雷码与二进制的转化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to" class="md-nav__link">
+    <span class="md-ellipsis">
+      二进制 to 格雷码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      格雷码 to 二进制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      奇偶校验位
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ADS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            ADS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/AVL%20tree%20and%20Splay%20tree.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AVL Tree and Splay Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Inverted%20file%20index.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inverted File Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Leftist tree and skew tree.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leftist Tree and Skew Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Binomial%20queue.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binomial Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Backtracking.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backtracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Divide and conquer.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divide and Conquer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Dynamic programming.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Greedy algorithm.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/NP completeness.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NP Completeness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Approximation.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approximation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ads/Parallel%20Algorithms.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallel Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../os/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../os/ppt%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PPT 习题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JAVA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ODD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ODD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../py/class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class(xdq)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../py/others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    JAVA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            JAVA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../java/java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JAVA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E4%BF%A1%E5%AE%89%E5%8E%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      信息表达
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      计算机系统抽象层
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      数字系统
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      BCD 码
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#excess-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      余三码（EXCESS 3）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gray-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      格雷码(Gray Codes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="格雷码(Gray Codes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      格雷码与二进制的转化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="格雷码与二进制的转化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#to" class="md-nav__link">
+    <span class="md-ellipsis">
+      二进制 to 格雷码
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      格雷码 to 二进制
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      奇偶校验位
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chap-1-digital-systems-and-information">Chap 1 Digital Systems and Information<a class="headerlink" href="#chap-1-digital-systems-and-information" title="Permanent link">&para;</a></h1>
+<h2 id="_1">信息表达<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>discrete.</p>
+<p>voltage: HIGH, LOW(中间 undefined/floating)</p>
+<p>输入输出对高低电平的判定范围：宽进严出</p>
+<p>模拟信号-&gt;二进制高低电平的信号：transistors晶体管</p>
+<h2 id="_2">计算机系统抽象层<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>algorithms, programmimg languages, operating systems, intruction set architecture, microarchitecture, register transfers, logic gates, transistor circuits</p>
+<h2 id="_3">数字系统<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>一般一个 r 进制数会被写成这个形式：<img alt="Alt text" src="../image.png" /></p>
+<h2 id="bcd">BCD 码<a class="headerlink" href="#bcd" title="Permanent link">&para;</a></h2>
+<p>将十进制的每一位分别用真值相等的 4 位二进制表示，<code>0</code>-<code>9</code> -&gt; <code>0000</code>-<code>1001</code></p>
+<h2 id="excess-3">余三码（EXCESS 3）<a class="headerlink" href="#excess-3" title="Permanent link">&para;</a></h2>
+<p>在 BCD 码的基础上添加一个大小为 3 的偏移量，<code>0</code>-<code>9</code>-&gt;<code>0011</code>-<code>1100</code></p>
+<h2 id="gray-codes">格雷码(Gray Codes)<a class="headerlink" href="#gray-codes" title="Permanent link">&para;</a></h2>
+<p>优点：相邻的两个数在二进制下的表示只相差一位。（当在占满时，对于整个编码序列，环状满足该条件）</p>
+<p><img alt="Alt text" src="../image-1.png" /></p>
+<h3 id="_4">格雷码与二进制的转化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="to">二进制 to 格雷码<a class="headerlink" href="#to" title="Permanent link">&para;</a></h4>
+<p>保留二进制码的最高位作为格雷码的最高位；格雷码的其余位为二进制码对应位与其上一位相异或。（xor）</p>
+<h4 id="to_1">格雷码 to 二进制<a class="headerlink" href="#to_1" title="Permanent link">&para;</a></h4>
+<p>保留格雷码的最高位作为二进制码的最高位；二进制码的其余位为格雷码对应位与二进制上一位相异或。（xor）</p>
+<h2 id="_5">奇偶校验位<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>信号传输过程中出现信号抖动，因此我们需要进行错误检测。</p>
+<p>一种错误检测方法叫做冗余Redundancy，加入额外信息检查是否正确。</p>
+<p>冗余的一种为引入<strong>奇偶校验位Parity Bit</strong>。奇校验，偶校验。odd/even parity.通过引入额外的一位来保证整个信息串中 <code>1</code> 的个数是奇数/偶数。</p>
+<h1 id="chap-2-combinational-logic-circuits">Chap 2 Combinational Logic Circuits<a class="headerlink" href="#chap-2-combinational-logic-circuits" title="Permanent link">&para;</a></h1>
+<h2 id="_6">逻辑运算<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>这里注意<strong>德摩根定律</strong>就够了。<img alt="Alt text" src="../image-2.png" /></p>
+<h2 id="_7">逻辑门<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>and 直 or 弯 not 三角圈</p>
+<p>延时 delay （这里可能会考延时的计算）</p>
+<h3 id="universal-gate">通用门 Universal Gate<a class="headerlink" href="#universal-gate" title="Permanent link">&para;</a></h3>
+<p>logically completed</p>
+<p>指 NAND 和 NOR ，具体怎么凑andornot用通用够了</p>
+<h2 id="_8">布尔代数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><strong>一个重要的运算律：(X + Y)(X + Z) = X + YZ</strong></p>
+<p>（比如说：(X + Y)(X + Yba) = X + YYba = X，或者 X + XbaY = (X + Xba)(X + Y)= X + Y）</p>
+<h3 id="duality-rule">对偶法则 Duality Rule<a class="headerlink" href="#duality-rule" title="Permanent link">&para;</a></h3>
+<p>将原式的乘改为或，原式的或改为乘。（括号和加号的兑换）</p>
+<p>但是不能改变计算优先级，，，必要的时候加括号</p>
+<p>除非一个表达式是<strong>自对偶 Self_dual</strong> 的，那么他的表达式都与原表达式不同</p>
+<p>如果 F 与 G 等价，那么两者的对偶也等价。</p>
+<h3 id="complement-of-a-function">互补函数 Complement of a Function<a class="headerlink" href="#complement-of-a-function" title="Permanent link">&para;</a></h3>
+<p>一个函数的非 = 它的对偶函数 每个变量都取反</p>
+<h3 id="substitution-rules">替代法则 Substitution Rules<a class="headerlink" href="#substitution-rules" title="Permanent link">&para;</a></h3>
+<p>一个原有等式，将这个等式中的一个变量全部替换为另一个变量或者是一个表达式，则等式依然成立</p>
+<p>比如说：</p>
+<p>对一个等式 X(Y + Z) = XY + XZ;</p>
+<p>使用 X + YZ 替换所有的 X，则：(X + YZ)(Y + Z) = (X + YZ)Y + (X + YZ)Z；</p>
+<h3 id="consensuc-theorem">一致性定理 Consensuc Theorem<a class="headerlink" href="#consensuc-theorem" title="Permanent link">&para;</a></h3>
+<p>XY + XbaZ + YZ = XY + XbaZ </p>
+<p>就是说这里把YZ直接舍去了。这里感觉可以直接舍去是因为前面乘 Y 和乘 Z 的分别刚好是 X 和 Xba。</p>
+<h2 id="standard-forms-canonical-forms">标准形式 Standard Forms 与规范形式 Canonical Forms<a class="headerlink" href="#standard-forms-canonical-forms" title="Permanent link">&para;</a></h2>
+<p>midterm：</p>
+<p>最小项之和 SOM （之和代表，对真值表结果为1的状态全部列出来相加（or），有1得1）</p>
+<p>maxterm：</p>
+<p>最大项之积 POM （之积代表，对真值表结果为0的状态全部列出来相乘（and）后取反，有0得0）</p>
+<h2 id="_9">电路实现与优化<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><strong>卡诺图Karnauph map</strong></p>
+<h3 id="cost-criteria">成本标准 cost criteria<a class="headerlink" href="#cost-criteria" title="Permanent link">&para;</a></h3>
+<p>三种标准：
+- Literal cost(L) 字面成本
+  - 一共出现了几个变量，AB + ACBba + AbaBbaC，这里 L = 8；
+- Gate input cost(G) 门输入成本
+- Gate input cost with NOTs (GN) 带not的门输入成本</p>
+<p>比如：
+<img alt="Alt text" src="../11.png" />
+- G = 8 + 3(3个term) = 11, GN = G + 3(3个单个的取反) = 14
+- G = 11 + 4 = 15， GN = G + 3(3个distinct的取反) = 18
+- G = 10 + 4 = 14， GN = G + 3 = 17
+- 注意，GN 计算的是 distinct 的取反的个数，G 取的是项数，项数不包括仅含单个字母的项。（这是对于 SOP 和 POS 来说的，因为他们才有项数概念）</p>
+<h3 id="_10">卡诺图<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>对于这张图<img alt="Alt text" src="../image-3.png" />。我们使用 SOM （其实也可以一眼看出）这个的结果等式应该是 F(x,y,z) = y.</p>
+<h4 id="_11">规范化的化简<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>我们引入 <strong>质蕴含项 prime implication</strong>。</p>
+<p>一个质蕴含项是通过在图表中结合最大数的相邻的正方形方块成一个大的矩形而获得的乘积项，其中正方形的数量为2的幂。</p>
+<p>Essential Prime Implicant如果这个质蕴含项是唯一能够覆盖几个minterms的质蕴含项。</p>
+<p><img alt="Alt text" src="../image-4.png" /></p>
+<p>在操作过程中，我们要尽量减少质蕴含项之间的重叠，在最后的解决方案中，要确保所选的每个质蕴含项至少包括一个不包含在所选的任何其他质蕴含项中的小项。</p>
+<p>一些实例：</p>
+<p><img alt="Alt text" src="../17.png" /></p>
+<p><img alt="Alt text" src="../18.png" /></p>
+<p><img alt="Alt text" src="../19.png" /></p>
+<p>当1们选不出来很难划质蕴含项的时候，那就选择拿0们下手吧，下手就会变成了maxterms了：</p>
+<p><img alt="Alt text" src="../20.png" /></p>
+<p>相比起来：</p>
+<p><img alt="Alt text" src="../21.png" /></p>
+<h4 id="dont-cares-in-k-maps">不定项 Don't Cares in K-Maps：<a class="headerlink" href="#dont-cares-in-k-maps" title="Permanent link">&para;</a></h4>
+<p>我不懂但是他说的对</p>
+<p><img alt="Alt text" src="../22.png" /></p>
+<h2 id="_12">三态门<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="3-state-buffer">三态缓冲器3-state buffer<a class="headerlink" href="#3-state-buffer" title="Permanent link">&para;</a></h3>
+<p>使能端 enable<img alt="Alt text" src="../image-5.png" /></p>
+<p>使能端置 1 时 读 1 输出 1 读 0 输出 0；使能端置 0 时输出为Hi-Z（浮动，高阻态）</p>
+<h3 id="_13">复杂门<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>一般有很多个输入，长得丑看得懂就好了</p>
+<h1 id="chap-3-combinational-logic-design">Chap 3 Combinational Logic Design<a class="headerlink" href="#chap-3-combinational-logic-design" title="Permanent link">&para;</a></h1>
+<h2 id="_14">分层设计<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<p>Top-Down 和 Bottom-up，从需求开始和根据现有元件组合</p>
+<h2 id="_15">技术参数<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<p>Fan-in, Fan-out, Propagation Delay 信号改变后从输入到输出所需的变化时间</p>
+<h3 id="_16">扇入扇出<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>描述一个门能接受的最多输出量，通过标准负载来定义</p>
+<h4 id="_17">评估负载<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p>transition time 过渡时间</p>
+<p><img alt="Alt text" src="../image-6.png" /></p>
+<p>当超出扇入后，门对输出的反应太慢了。</p>
+<h3 id="_18">传播延迟<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p>使用 t<sub>PHL</sub> 和 t<sub>PLH</sub> 来分别描述从高电平变化到低电平和从低电平变化到高电平。</p>
+<p><img alt="Alt text" src="../image-7.png" /></p>
+<h2 id="_19">延时模型<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
+<p><img alt="Alt text" src="../image-10.png" /></p>
+<h3 id="transport-delay">传输延迟 transport delay<a class="headerlink" href="#transport-delay" title="Permanent link">&para;</a></h3>
+<p>输入和输出之间的延时是一个固定值</p>
+<p><img alt="Alt text" src="../image-8.png" /></p>
+<h3 id="intertial-delay">惯性延迟 intertial delay<a class="headerlink" href="#intertial-delay" title="Permanent link">&para;</a></h3>
+<p><strong>拒绝时间rejection time</strong>：当输入达到一定能量后才会出发栅极输出（用来过滤噪音）</p>
+<p><img alt="Alt text" src="../image-9.png" /></p>
+<h2 id="_20">这里会考到一些延迟计算题<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<p>我们应该要考虑到一个电路的延迟由电路本身的固有延迟和不同负载导致的不同延时相合而成。</p>
+<h2 id="glitch">毛刺 Glitch<a class="headerlink" href="#glitch" title="Permanent link">&para;</a></h2>
+<p>而因为系统存在延迟，因此我们得到的信号图很多情况华都会有一个毛刺，</p>
+<p>（顺便实操做个题吧）</p>
+<p><img alt="Alt text" src="../image-11.png" /></p>
+<p>而这里面的毛刺我们可以用添加冗余项来解决。</p>
+<p>比如说对这个式子我们可以添加冗余项 AB 就可以消除毛刺。</p>
+<h2 id="_21">正逻辑和负逻辑<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
+<p>正逻辑以1为有效信号，负逻辑以0为有效信号。</p>
+<p><img alt="Alt text" src="../image-12.png" /></p>
+<h2 id="_22">验证正确性<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h2>
+<p>Manual Logic Analysis 和 Simulation</p>
+<h2 id="_23">组合逻辑<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<h3 id="decoder">Decoder<a class="headerlink" href="#decoder" title="Permanent link">&para;</a></h3>
+<h3 id="encoder">Encoder<a class="headerlink" href="#encoder" title="Permanent link">&para;</a></h3>
+<h3 id="mux">MUX<a class="headerlink" href="#mux" title="Permanent link">&para;</a></h3>
+<p>MUX 可以实现任意的逻辑函数：</p>
+<p>将控制端当做输入，原来的输入当做结果，在原来的输入端写入逻辑函数的真值表以实现任意逻辑函数。</p>
+<h3 id="half-adderfull-adder">half adder，full adder<a class="headerlink" href="#half-adderfull-adder" title="Permanent link">&para;</a></h3>
+<p>有行波加法器</p>
+<p><img alt="Alt text" src="../image-13.png" /></p>
+<h3 id="_24">二进制减法<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p>使用补码</p>
+<p><img alt="Alt text" src="../image-14.png" /></p>
+<p>在输入中添加异或门来实现反码，再用C0来实现+1从而得到补码</p>
+<h1 id="chap-4-sequential-circuits">Chap 4 Sequential Circuits<a class="headerlink" href="#chap-4-sequential-circuits" title="Permanent link">&para;</a></h1>
+<p>同步 synchronous 和异步 asynchronous</p>
+<p>而同步电路的使用更加广泛，通常这些离散的时刻都是由 <strong>时钟发生器(clock generator)</strong> 这种时序器件产生周期性的 <strong>时钟脉冲(clock pulse)</strong> 序列来实现的（这种电路一般被称为 <strong>钟控时序电路(clocked sequential circuit)</strong>，由于设计相对容易，鲁棒性强，所以被广泛应用）</p>
+<p><strong>缓冲器buffer</strong> 一般通过两个非门串联，并将输入连通输出实现，这样能够实现信息的存储，然而无法修改。而锁存器就是在缓冲器的基础上，将非门替换为或非门或与非门实现的。</p>
+<h2 id="_25">锁存器<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<h3 id="sr">SR 锁存器<a class="headerlink" href="#sr" title="Permanent link">&para;</a></h3>
+<p><img alt="Alt text" src="../image-15.png" /></p>
+<p>SR 锁存器使用或非门， S'R' 锁存器使用与非门，SR 当输入为 0 的时候保持状态，当输入为 1 的时候无效，S'R'相反。</p>
+<h3 id="d">D 锁存器<a class="headerlink" href="#d" title="Permanent link">&para;</a></h3>
+<p>带控制输入的SR锁存器，当 C 为 1 能写入，C 为 0 时锁存。
+<img alt="Alt text" src="../image-17.png" /></p>
+<h2 id="flipflop">flipflop 触发器<a class="headerlink" href="#flipflop" title="Permanent link">&para;</a></h2>
+<ul>
+<li>在有脉冲（高电平）时，修改第一个锁存器的值，保持第二个锁存器的值；在没有脉冲（低电平）时候保持第一个锁存器的值，修改第二个锁存器的值，更新触发器的状态，即 <strong>主从式(master-slave)触发器</strong>；</li>
+<li>仅在时钟的边缘触发，即在特定时刻仅接受一个输入，即 <strong>边沿触发式(edge-triggered)触发器</strong>；</li>
+</ul>
+<blockquote>
+<p>边沿触发式 D 触发器是目前使用最广泛的触发器。</p>
+</blockquote>
+<h3 id="sr_1">SR 主从触发器<a class="headerlink" href="#sr_1" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../13.png" /></p>
+<p>使用一对 gated D-latches，来记录和分隔<em>next</em> state 和 <em>current</em> state</p>
+<ul>
+<li>
+<p>当clock初置1时，master的we端口为1，slave的we端口为0，master 读入状态，slave 保持状态。</p>
+</li>
+<li>
+<p>当clock又置为0时，slave的we端口为0，master的we端口为1，则slave记录了上一个阶段（clock为1时）的读入数据</p>
+</li>
+</ul>
+<p><strong>NOTE 1:</strong> JK 触发器（注意是与非门）</p>
+<p><img alt="Alt text" src="../image-25.png" /><img alt="Alt text" src="../image-26.png" /></p>
+<p>JK触发器是SR触发器基础上的改进，其中即使S=R=1也无关紧要</p>
+<ul>
+<li>当 J 与 K 输入数据不同，那么输出 Q 会在下一个时钟沿取 J 的值</li>
+<li>当 J 与 K 输入数据相同且都为高电位时，输出结果互换（0变1，1变0）</li>
+<li>当 J 与 K 输入数据相同且都为低电位时，结果保持。</li>
+</ul>
+<p><strong>NOTE 2:</strong> T 触发器</p>
+<p><img alt="Alt text" src="../image-27.png" /></p>
+<p>只有一个输入 T ，将 JK 触发器的 J 端和 K 端相接。</p>
+<ul>
+<li>当 T = 0，输出保持</li>
+<li>当 T = 1，输出结果反转（0变成1，,变成0）</li>
+</ul>
+<h3 id="_26">边沿触发式触发器<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<p><img alt="Alt text" src="../image-19.png" /></p>
+<p>如图为上升沿触发的 D 触发器。</p>
+<p><strong>NOTE:</strong></p>
+<p>触发器的基本描述方法：
+- 理论分析中：状态表(Characteristic Table, or State Table)用输入和当前状态来描述下一状态。
+- 工程设计中：激励表(Excitation Table)用当前状态和下一状态来描述输入（展示从当前状态转移到下一状态所需要的输入）。</p>
+<h2 id="_27">时序电路分析<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h2>
+<h3 id="flip-flop-input-equation">触发器的输入方程 flip-flop input equation<a class="headerlink" href="#flip-flop-input-equation" title="Permanent link">&para;</a></h3>
+<p><img alt="Alt text" src="../image-20.png" /></p>
+<p>D<sub>A</sub> = AX + BX</p>
+<p>D<sub>B</sub> = AbaX</p>
+<p>Y = (A + B)Xba</p>
+<h3 id="state-table">状态表 state table<a class="headerlink" href="#state-table" title="Permanent link">&para;</a></h3>
+<p>present state, input, next state, output</p>
+<p>对 D<sub>A</sub>: A(t + 1) = D<sub>A</sub> = A(t)X + B(t)X</p>
+<p>D<sub>B</sub>: B(t + 1) = D<sub>B</sub> = A(t)baX</p>
+<p>于是我们可以画状态图：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Present State</th>
+<th style="text-align: center;">Input</th>
+<th style="text-align: center;">Next State</th>
+<th style="text-align: center;">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>AB</code></td>
+<td style="text-align: center;"><code>X</code></td>
+<td style="text-align: center;"><code>AB</code></td>
+<td style="text-align: center;"><code>Y</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: center;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>01</code></td>
+<td style="text-align: center;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>01</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: center;"><code>1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>01</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>11</code></td>
+<td style="text-align: center;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>10</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: center;"><code>1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>10</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>10</code></td>
+<td style="text-align: center;"><code>0</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>11</code></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>00</code></td>
+<td style="text-align: center;"><code>1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>11</code></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>10</code></td>
+<td style="text-align: center;"><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Mealy model circuit</strong>：输出依赖当前状态与输入；</li>
+<li><strong>Moore model circuit</strong>：输出不依赖输入只依赖当前状态。</li>
+</ul>
+<h3 id="state-diagram">状态表 state diagram<a class="headerlink" href="#state-diagram" title="Permanent link">&para;</a></h3>
+<p>比如说这张图是上一张表（米勒型）对应的图：</p>
+<p><img alt="Alt text" src="../image-21.png" /></p>
+<p>而摩尔型的状态图就非常简单：</p>
+<p><img alt="Alt text" src="../image-22.png" /></p>
+<h3 id="equivalent-state">等价状态 equivalent state<a class="headerlink" href="#equivalent-state" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>对于两个状态，如果它们对于同一输入序列的响应是完全相同的（包括相同的输出和相同的状态转移），那么这两个状态是等价的。</p>
+</blockquote>
+<h4 id="_28">未简化的状态图<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<p><img alt="Alt text" src="../image-23.png" /></p>
+<p>状态 S2 和 S3 对于输入 <code>0</code> 输出为 <code>1</code>，下一状态为 S0；对于输入 <code>1</code>，相应的输出都是 <code>0</code>，下一状态都是 S2。所以 S2 和 S3 是等价状态。我们可以把这两个等价状态简化成同一个状态，记为 S2。</p>
+<p>更进一步地，我们注意到 S1 和新的 S2 也是等价状态，我们继续化简它们。</p>
+<p><img alt="Alt text" src="../image-24.png" /></p>
+<h1 id="chap-5-digital-hardware-implementation">Chap 5 Digital Hardware Implementation<a class="headerlink" href="#chap-5-digital-hardware-implementation" title="Permanent link">&para;</a></h1>
+<h2 id="mos">MOS 管<a class="headerlink" href="#mos" title="Permanent link">&para;</a></h2>
+<h3 id="nmos-pmos">NMOS PMOS<a class="headerlink" href="#nmos-pmos" title="Permanent link">&para;</a></h3>
+<p>NMOS 画法前面没有取反的圆圈，表示它在X=1时接通；PMOS相反。</p>
+<p><img alt="Alt text" src="../image-28.png" /></p>
+<p>接下来我们可以使用 NMOS 和 PMOS 管来进行一些逻辑的设计。我们用并联表示相加，用串联表示相乘。</p>
+<p><img alt="Alt text" src="../image-29.png" /></p>
+<blockquote>
+<p>左图实现了 Xba*Yba，右图实现了X + Y</p>
+</blockquote>
+<h3 id="cmos">CMOS 结构设计<a class="headerlink" href="#cmos" title="Permanent link">&para;</a></h3>
+<p><img alt="Alt text" src="../image-30.png" /></p>
+<blockquote>
+<p>首先让我们来看图(a)，这是 CMOS 的通用结构（可以被称作 static CMOS）。其可以分为上下两部分，上半部分接电源，由 PMOS 设计出 F 的逻辑；下半部分接地，由 NMOS 设计出 Fba 的逻辑。也就是说 CMOS 同时需要实现 F 和 Fba，这就是其名称 complementary 的由来。</p>
+</blockquote>
+<p><strong>CMOS 在结构上的最大特征是，其 PMOS 的电路和 NMOS 的电路是对偶的，这使得我们只需要设计两者中的一个，就可以直接利用对偶得到另外一个。（但是建议从下面开始设计）</strong></p>
+<h2 id="_29">可编程技术<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h2>
+<h3 id="_30">在硬件层面的三种实现手段<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Control Connections</li>
+<li>Mask programing</li>
+<li>Fuse（高电压切断部分电路）</li>
+<li>Anti-fuse(高电压联通部分电路)</li>
+<li>Single-bit storage element</li>
+<li>Lookup Tables</li>
+<li>Storage elements for the function<ul>
+<li>比如使用一个 <code>MUX</code>，并将输入端接内存，通过修改内存的值来修改 <code>MUX</code> 的行为，进而实现函数重编程</li>
+</ul>
+</li>
+<li>Control transistor switching 控制晶体管开关</li>
+</ul>
+<h3 id="_31">分类<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<ul>
+<li>permanent 永久编程技术：出厂后经过一次变成，便永久成型</li>
+<li>Mask programming</li>
+<li>Fuse</li>
+<li>Anti-fuse</li>
+<li>reprogrammable 可重编程技术：允许重复编程</li>
+<li>Volatile:断电后编成信息会消失<ul>
+<li>Single-bit storage element</li>
+</ul>
+</li>
+<li>Non-volatile:编程信息仅在擦除操作后才会消失，不受断电影响<ul>
+<li>FLASH （memory）</li>
+</ul>
+</li>
+</ul>
+<h3 id="_32">常见的可编程技术<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<h4 id="1-rom">1. ROM 只读内存<a class="headerlink" href="#1-rom" title="Permanent link">&para;</a></h4>
+<p><img alt="Alt text" src="../image-31.png" /></p>
+<ul>
+<li><span class="arithmatex">\(2^{N} * M\)</span> ROM 由 N 个输入，M 个输出，以及 <span class="arithmatex">\(2^{N}\)</span> 个译码后的最小项组成。</li>
+<li>固定的 AND 用于设计译码器，实现所有的 2的n次方个最小项</li>
+<li>可编程的 OR 用于把这些最小项“或”起来并实现特定逻辑</li>
+<li>PROM 通过 fuse 或者 anti-fuse 等手段实现可编程，所以在出厂后仅可进行一次编程修改，属于永久编程技术</li>
+<li>ROM 的输入提供了一串地址，输出则是这组地址对应内存中存储的信息。</li>
+</ul>
+<h4 id="2-pal-array-logic">2. PAL 可编程阵列逻辑 Array Logic<a class="headerlink" href="#2-pal-array-logic" title="Permanent link">&para;</a></h4>
+<ul>
+<li>不需要列出所有最小项，是可优化的，但也因此不一定能表达所有逻辑</li>
+<li>具有固定的 OR 和一批可编程的 AND</li>
+<li>一种可行的处理方案是把一个既有的 PAL 输出当做输入，输入到另外一个函数中，来弥补项不足的问题</li>
+</ul>
+<h4 id="3-pla-logic-array">3. PLA 可编程逻辑阵列 Logic Array<a class="headerlink" href="#3-pla-logic-array" title="Permanent link">&para;</a></h4>
+<ul>
+<li>PLA 与 ROM 类似，使用译码器 + OR</li>
+<li>PLA 不使用译码器获得所有的最小项，而是使用可编程的 AND 阵列来替代译码器</li>
+<li>PLA 具有可编程的 AND 和 OR，因此比起 PAL 和 ROM 更具灵活性。单音词他的优化会变得更加麻烦</li>
+<li>同时 PLA 和 PAL 一样不能完全表达所有的逻辑，一种改进方法是，在输出的时候再做一次异或，就能够产生新的项来弥补逻辑不能完全表达的问题。（不用非门体现了可编程的思想）</li>
+</ul>
+<h1 id="chap-6-register-register-transfers">Chap 6 Register &amp; Register Transfers<a class="headerlink" href="#chap-6-register-register-transfers" title="Permanent link">&para;</a></h1>
+<ul>
+<li>触发器 + 对应的状态控制电路 = 实现多位数据存储</li>
+<li>counter：随时钟周期按照固定的轨迹循环。</li>
+<li>新数据被写入寄存器叫做 <strong>Load</strong>，载入操作在同一个时钟脉冲内完成叫做 <strong>Parallel 并行</strong></li>
+</ul>
+<h2 id="_33">保持<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h2>
+<p>我们希望寄存器在不需要的时候保持而不是读入：</p>
+<h3 id="plan-a-clock-gating">Plan A: Clock gating 门控时钟<a class="headerlink" href="#plan-a-clock-gating" title="Permanent link">&para;</a></h3>
+<p>让它选择性地跟随时钟脉冲切换状态。</p>
+<p>（下图中是或门）
+<img alt="Alt text" src="../image-32.png" /></p>
+<p>当 Load = 0时，始终有 control 信号为 1，脉冲消失，寄存器无法被载入</p>
+<p><em>NOTE: 但由于多添加了一个逻辑门，时钟脉冲到达 control 的时候会出现额外的传播延时，即时钟偏移 clock skew。实际设计中我们要尽量避免。</em></p>
+<h3 id="plan-b">Plan B：在它不需要修改的时候不停地将它的输入载入。（保持）<a class="headerlink" href="#plan-b" title="Permanent link">&para;</a></h3>
+<p>通过一个 <code>MUX</code> 来选择，用 <code>EN</code> 使能端来控制载入新值还是保持旧值。</p>
+<p><img alt="Alt text" src="../image-34.png" /></p>
+<h2 id="_34">寄存器单元<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h2>
+<p>Register Cell：FF + 实现其组合逻辑的组合电路</p>
+<h2 id="register-transfer">Register transfer 寄存器传输<a class="headerlink" href="#register-transfer" title="Permanent link">&para;</a></h2>
+<p>用一个控制单元来控制数据通路。control unit，datapath。</p>
+<p>register transfer operations：load，clear，shift，count</p>
+<p>3个基本部分：set of registers，operations，controlof operations</p>
+<p>最基础的（elementary）部分叫做微操作，microoperation</p>
+<h2 id="notation">寄存器传输语言 notation<a class="headerlink" href="#notation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>子母和数字表示一个寄存器</li>
+<li>括号表示寄存器位数</li>
+<li>箭头表示数据传输</li>
+<li>逗号代表并行操作</li>
+<li>中括号（brackets）代表一个内存地址
+<img alt="Alt text" src="../image-35.png" /></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AnyaReese/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="../../../js/katex.js"></script>
+      
+    
+  </body>
+</html>

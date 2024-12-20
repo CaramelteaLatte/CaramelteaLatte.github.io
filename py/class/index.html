@@ -1,0 +1,3122 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="ChenYixuan">
+      
+      
+        <link rel="canonical" href="https://carameltealatte.github.io/py/class/">
+      
+      
+        <link rel="prev" href="../../java/java/">
+      
+      
+        <link rel="next" href="../others/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Class(xdq) - CaramelteaLatte O.o.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../css/card.css">
+    
+      <link rel="stylesheet" href="../../css/flink.css">
+    
+      <link rel="stylesheet" href="../../css/changelog_extra.css">
+    
+      <link rel="stylesheet" href="../../css/counter.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#classpy" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="CaramelteaLatte O.o." class="md-header__button md-logo" aria-label="CaramelteaLatte O.o." data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CaramelteaLatte O.o.
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Class(xdq)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fds/ds1/" class="md-tabs__link">
+          
+  
+    
+  
+  SE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  ODD
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../git/" class="md-tabs__link">
+        
+  
+    
+  
+  notes
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CaramelteaLatte O.o." class="md-nav__button md-logo" aria-label="CaramelteaLatte O.o." data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    CaramelteaLatte O.o.
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            SE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fds/ds1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/class/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数字逻辑设计
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            数字逻辑设计
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E9%80%BB/2048/2048/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2048
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E9%80%BB/sum/sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ADS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            ADS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/AVL%20tree%20and%20Splay%20tree.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AVL Tree and Splay Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Inverted%20file%20index.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inverted File Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Leftist tree and skew tree.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leftist Tree and Skew Tree
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Binomial%20queue.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binomial Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Backtracking.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backtracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Divide and conquer.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divide and Conquer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Dynamic programming.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Greedy algorithm.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/NP completeness.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NP Completeness
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Approximation.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approximation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ads/Parallel%20Algorithms.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallel Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    class
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/ppt%E4%B9%A0%E9%A2%98/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PPT 习题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JAVA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    ODD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            ODD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Class(xdq)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Class(xdq)
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-to-start-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 to start with
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 to start with">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 关键字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 id 函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 IO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 print
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 calculation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4 内置转换函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.5 赋值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.1 条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.2 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.3 列表元素计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.4 格式化输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#155" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.5 位运算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 数据结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 字符串
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.3 列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.4 元组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#165" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.5 随机函数库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#166" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.6 集合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#167" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.7 字典
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7 函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.1 定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.2 参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.3 返回值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#174" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.4 递归
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#175" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.5 内置函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 程序模块
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../others/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Others
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    JAVA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            JAVA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../java/java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JAVA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BF%A1%E5%AE%89%E5%8E%9F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-to-start-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 to start with
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 to start with">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 量
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 量">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 关键字
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 id 函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 IO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 IO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121-input" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 input
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122-print" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 print
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 calculation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 calculation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 string
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 Graph
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#144" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.4 内置转换函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#145" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.5 赋值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 语句
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 语句">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.1 条件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.2 循环
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.3 列表元素计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.4 格式化输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#155" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.5 位运算
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 数据结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 序列
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 字符串
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.3 列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.4 元组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#165" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.5 随机函数库
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#166" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.6 集合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#167" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.7 字典
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 函数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7 函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.1 定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.2 参数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#173" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.3 返回值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#174" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.4 递归
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#175" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7.5 内置函数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 程序模块
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="classpy">Class.py<a class="headerlink" href="#classpy" title="Permanent link">&para;</a></h1>
+<p>py 真的是一种很神奇的语言。。。我觉得它真的分不了点 TT，不过也有可能是老师的 PPT 做得太懒了</p>
+<h2 id="1-to-start-with">1 to start with<a class="headerlink" href="#1-to-start-with" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 量<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<h4 id="111">1.1.1 关键字<a class="headerlink" href="#111" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Python 区分大小写。True <em>not true</em></li>
+<li>raise，is，as，expect，lambda，with，assert，finally，nonlocal，vield，class，from，global，pass</li>
+</ul>
+<h4 id="112-id">1.1.2 id 函数<a class="headerlink" href="#112-id" title="Permanent link">&para;</a></h4>
+<p><em>python你真会说。。。。这就是地址</em></p>
+<ul>
+<li>赋值操作不改变实际赋值值，只是为数据对象去一个相关的名字。名字是对象的引用。</li>
+<li>id 函数返回对象的标识（一般是对象的地址）</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">a</span><span class="o">=</span><span class="mi">7</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1566532000
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>1566532000
+</code></pre></div></p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">a</span><span class="o">=</span><span class="mi">5</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>5
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>1566531936
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>1566532000
+</code></pre></div></p>
+<h3 id="12-io">1.2 IO<a class="headerlink" href="#12-io" title="Permanent link">&para;</a></h3>
+<h4 id="121-input">1.2.1 input<a class="headerlink" href="#121-input" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>input()</code> 读取到 str 类型</li>
+<li>使用 <code>int(input())</code> 可以读取到 int 类型</li>
+<li>使用 <code>input.split()</code> 可以读取到一连串的 str 类型，没有特殊说明就用空格隔开来输入</li>
+<li>使用 <code>input.split(',')</code> 可以控制输入格式中使用 <code>,</code> 来分隔输入</li>
+<li>使用 <code>input("请输入：").split()</code> 可以在输入前添上一行输入指示</li>
+</ul>
+<h4 id="122-print">1.2.2 print<a class="headerlink" href="#122-print" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>print(3,7,...)</code> 可以通过加逗号一次输出很多个数字，默认输出中间带空格且末尾带换行</li>
+<li><code>print(a,b,...)</code> 可以输出变量的值</li>
+<li>使用 end 参数控制输出格式，<code>print(3,end=' ')</code></li>
+</ul>
+<h3 id="13">1.3<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>奇怪的画图啊？？？？</p>
+<p>（我不仅没学turtle库也没载，，，，）</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">turtle</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">turtle</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">turtle</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="14-calculation">1.4 calculation<a class="headerlink" href="#14-calculation" title="Permanent link">&para;</a></h3>
+<h4 id="141-data">1.4.1 data<a class="headerlink" href="#141-data" title="Permanent link">&para;</a></h4>
+<ul>
+<li>py 允许的数据类型：整数，浮点数，复数</li>
+<li>整数的表示方式</li>
+<li>运算符</li>
+<li><code>/</code> 表示浮点数除法，<code>//</code> 表示整数除法，<code>//</code> 计算后的结果的type，如果前面两个数中有一个数float，那么最后结果也float，但是按照整除来算，跟上 .0。</li>
+<li><code>**</code> 表示幂</li>
+<li>浮点数的表示方式</li>
+<li>科学计数法，1.2e-5，e后面的值就是幂次方，必须为整数，e前后不能为空</li>
+<li>浮点数计算有误差，如 <code>2.1-2.0==0.1</code> False</li>
+<li>浮点数的整除还是浮点数，取余也是浮点数</li>
+<li>复数：real 和 imaginary</li>
+<li>使用 <code>complex()</code> 函数来创建一个值为 <code>real + imag * J</code> 的复数</li>
+<li><code>round()</code> 函数表示四舍五入</li>
+<li>函数只有一个参数：四舍五入</li>
+<li>有两个参数：第二个参数表示限制小数点位数。<code>round(10.678,2)</code> 为 10.67，<code>round(12345,-2)</code> 为 12300</li>
+<li>位运算要使用补码，使用符号扩展扩展至32位，注意负数。</li>
+</ul>
+<h4 id="142-string">1.4.2 string<a class="headerlink" href="#142-string" title="Permanent link">&para;</a></h4>
+<ul>
+<li>转义字符</li>
+<li><code>\n</code> 换行，<code>\t</code> 制表</li>
+<li><code>\ooo</code> 最多三位八进制，<code>\xyy</code> 最多两位十六进制</li>
+<li>
+<p><code>\\</code> 表示 <code>\</code>, <code>\"</code> 表示 <code>"</code></p>
+</li>
+<li>
+<p>字符串运算符有 <code>+</code> 和 <code>*</code>。（非常好记字面理解</p>
+</li>
+<li><code>type()</code> 调用函数用来查询对象的的类型信息。<code>type(1)</code> 返回 <code>&lt;class 'int'&gt;</code>, <code>type("py")</code> 返回 <code>&lt;class 'str'&gt;</code></li>
+<li>None（注意大小写</li>
+<li>None 不是 0</li>
+<li><code>bool(None)</code> False, <code>None == 0</code> False</li>
+</ul>
+<h4 id="143-graph">1.4.3 Graph<a class="headerlink" href="#143-graph" title="Permanent link">&para;</a></h4>
+<ul>
+<li>列表</li>
+<li><code>empty_list = []</code> 空列表</li>
+<li><code>weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thurseday', 'Friday']</code> <strong>注意下标从 0 开始</strong>，weekday[2] 是 Wednesday</li>
+<li>列表计算</li>
+<li>列表大小比较与字符串同理</li>
+<li>列表也可以加法，与字符串同理</li>
+<li>列表可以乘法初始化，与字符串同理</li>
+</ul>
+<h4 id="144">1.4.4 内置转换函数<a class="headerlink" href="#144" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>含义</th>
+<th>举例</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bool</td>
+<td>根据传入参数创建布尔值</td>
+<td><code>bool('str')</code></td>
+<td>True</td>
+</tr>
+<tr>
+<td>int</td>
+<td>···整数</td>
+<td><code>int(3.6)</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td>float</td>
+<td></td>
+<td><code>float(3)</code></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>complex</td>
+<td></td>
+<td><code>complex(1, 2)</code></td>
+<td>(1+2j)</td>
+</tr>
+<tr>
+<td>str</td>
+<td>创建一个字符串</td>
+<td><code>str(123)</code></td>
+<td>'123'</td>
+</tr>
+<tr>
+<td>ord</td>
+<td>返回 Unicode 字符对应的整数</td>
+<td><code>ord('a')</code></td>
+<td>97</td>
+</tr>
+<tr>
+<td>chr</td>
+<td>返回整数对应的 Unicode 字符</td>
+<td><code>chr(97)</code></td>
+<td>a</td>
+</tr>
+<tr>
+<td>bin</td>
+<td>转化为二进制</td>
+<td><code>bin(3)</code></td>
+<td>'0b11'</td>
+</tr>
+<tr>
+<td>oct</td>
+<td></td>
+<td><code>oct(10)</code></td>
+<td>'0o12'</td>
+</tr>
+<tr>
+<td>hex</td>
+<td></td>
+<td><code>hex(15)</code></td>
+<td>'0xf'</td>
+</tr>
+<tr>
+<td>list</td>
+<td>根据传入的参数创建一个新的列表</td>
+<td><code>list('abcd')</code></td>
+<td>['a','b','c','d']</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>int</code></li>
+<li><code>int("   35")</code> 去掉空格</li>
+<li><code>int("   3  5")</code> 无法转换</li>
+<li><code>int("35", 8)</code> 转换为八进制</li>
+</ul>
+<h4 id="145">1.4.5 赋值<a class="headerlink" href="#145" title="Permanent link">&para;</a></h4>
+<p><em>我觉得python很神奇的地方</em></p>
+<ul>
+<li>交换值不需要设置容量 t
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<h3 id="15">1.5 语句<a class="headerlink" href="#15" title="Permanent link">&para;</a></h3>
+<h4 id="151">1.5.1 条件<a class="headerlink" href="#151" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span> <span class="o">...</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="o">......</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">else</span> <span class="o">...</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="o">......</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span> <span class="o">...</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="o">......</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">elif</span> <span class="o">...</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  <span class="o">......</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">else</span> <span class="o">...</span>
+</code></pre></div>
+<h4 id="152">1.5.2 循环<a class="headerlink" href="#152" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">列表</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  <span class="o">......</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">while</span> <span class="o">...</span><span class="p">:</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>  <span class="o">......</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>  <span class="o">......</span>
+</code></pre></div></p>
+<p>注意使用 <code>break</code> 语句和 <code>continue</code> 语句。</p>
+<p><strong>语句块缩进表示这个是for下的语句</strong></p>
+<p><em>惨痛经历告诉我，不能莫名其妙缩进语句，会爆莫名其妙的错。。。。备注#空格请删干净。。。。。。。</em></p>
+<p><strong><code>range()</code>：</strong>
+- range(start, stop, step)
+- start 起始，默认从 0 开始。<code>range(5)</code> 表示 <code>range(0, 5)</code>
+- stop 结束但不包括 stop，<code>range(1, 5)</code> 遍历了 1234
+- step 默认 1</p>
+<p>于是我们可以有：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">fac</span> <span class="o">=</span> <span class="mi">1</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>  <span class="n">fac</span> <span class="o">*=</span> <span class="n">i</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">fac</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="153">1.5.3 列表元素计算<a class="headerlink" href="#153" title="Permanent link">&para;</a></h4>
+<p><code>lst=[i for i in list(range(1,5))]</code> lst [1, 2, 3, 4]</p>
+<p><code>nl = [2*number for number in [1,2,3,4]]</code>  nl [1, 2, 3, 4] #列表推导式</p>
+<p><code>nl = [number for number in range(1,8) if nnumber % 2 == 1]</code> nl [1, 3, 5, 7]</p>
+<h4 id="154">1.5.4 格式化输出<a class="headerlink" href="#154" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>格式限定符</th>
+<th>输出</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"{:d}".format(24)</code></td>
+<td>24</td>
+<td>格式化一个整数，d代表十进制整数</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note：d 十进制，b 二进制，o 八进制，x 十六进制</strong> </p>
+<table>
+<thead>
+<tr>
+<th><code>"{:5d}".format(24)</code></th>
+<th>___24</th>
+<th>宽度指定 5，在左侧增加空格</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"{:4d}".format(56789)</code></td>
+<td>56789</td>
+<td>宽度超出时全部输出</td>
+</tr>
+<tr>
+<td><code>"{:.2f}".format(1.2456)</code></td>
+<td>1.24</td>
+<td>小数点保留2位，f浮点数</td>
+</tr>
+<tr>
+<td><code>"{:.2e}".format(53.245)"</code></td>
+<td>5.32e+01</td>
+<td>e表示科学计数法</td>
+</tr>
+<tr>
+<td><code>"{:6.2f}".format(1.2449)"</code></td>
+<td>__1.24</td>
+<td>宽度为6，增加了空格</td>
+</tr>
+<tr>
+<td><code>"{:9s}".format("hello")</code></td>
+<td>hello____</td>
+<td>宽度为9，s代表字符串，左对齐</td>
+</tr>
+<tr>
+<td><code>"{:&gt;9s}".format("hello")</code></td>
+<td>____hello</td>
+<td>宽度为9，右对齐</td>
+</tr>
+<tr>
+<td><code>"{:^9s}".format("hello")</code></td>
+<td>__ hello __</td>
+<td>居中</td>
+</tr>
+</tbody>
+</table>
+<p><strong>要注意这种方法下总位数不会数进去小数点，但是别的书写方法会算进小数点，所以要数一下减一</strong></p>
+<p>也可以多个参数一起格式化输出：</p>
+<p><code>print("{0:.2f} {1:.2f}".format(x,y))</code></p>
+<p><code>{}</code> 表示占位符，format后跟填写的内容，0和1(:前)表示索引序列</p>
+<h4 id="155">1.5.5 位运算<a class="headerlink" href="#155" title="Permanent link">&para;</a></h4>
+<p>&amp; 位与，| 位或，^ 位异或，~ 位01取反，&lt;&lt; 位左移，&gt;&gt; 位右移</p>
+<h3 id="16">1.6 数据结构<a class="headerlink" href="#16" title="Permanent link">&para;</a></h3>
+<h4 id="161">1.6.1 序列<a class="headerlink" href="#161" title="Permanent link">&para;</a></h4>
+<p><em>？很不清楚吗，数组你</em></p>
+<p><strong>序列是一大类数据容器的统称，不是具体的数据类型</strong></p>
+<p><code>range()</code> 函数产生结果是<strong>序列</strong>，因此 for 函数可以直接遍历 range 函数的返回对象。</p>
+<p>如 <code>for i in range(4)</code> 而不需要 <code>for i in list(range(4))</code></p>
+<table>
+<thead>
+<tr>
+<th>序列操作</th>
+<th>描述：大部分跟字符串类型极其相似</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X1+X2</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>X*n</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>X[i]</code></td>
+<td>访问下标 i 的元素</td>
+</tr>
+<tr>
+<td><code>X[i: j]</code></td>
+<td>引用下标 i 到 <strong>j-1</strong> 的子序列</td>
+</tr>
+<tr>
+<td><code>X[i: j: k]</code></td>
+<td>引用...的子序列，步长 k</td>
+</tr>
+<tr>
+<td><code>len(X)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>max(X)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>min(X)</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>v in X</code></td>
+<td>检查 v 是否在 X 中，返回布尔值</td>
+</tr>
+<tr>
+<td><code>v not in X</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>1. 序列访问：</strong></p>
+<ul>
+<li>对一个有 n 个数据的序列，下标的有效范围是 0 到 n-1，或 -n 到 -1</li>
+<li>否则报错，下标越界</li>
+<li>-1 为最后一位，负数表示从后往前</li>
+<li>[1:-3] 表示从第二个数到倒数第四个数（第三个数的前面一个数）</li>
+<li>步长可以取负，取负表示从后往前取（顺序会不一样）</li>
+</ul>
+<p><strong>2. 序列复制：</strong></p>
+<ul>
+<li>如果直接将一个序列变量赋值给另外一个数列变量，那么这两个变量表达同一个序列（地址一样，值的改变一样）</li>
+<li>如果不想要地址相同的情况，可以使用切片：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span> <span class="p">:</span> <span class="p">]</span> <span class="c1"># 省略范围表示取整个从头到尾</span>
+</code></pre></div></li>
+</ul>
+<p><strong>3. 拆包运算：</strong></p>
+<p><em>python真的好简易好无脑啊啊啊我懂他为啥作为工具了。。。</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">info</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;章武&quot;</span><span class="p">,</span><span class="s2">&quot;male&quot;</span><span class="p">,</span><span class="mi">30</span><span class="p">,[</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">78</span><span class="p">]]</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">name</span><span class="p">,</span><span class="n">sex</span><span class="p">,</span><span class="n">age</span><span class="p">,</span><span class="n">grade</span><span class="o">=</span><span class="n">info</span>
+</code></pre></div>
+<ul>
+<li>字符串也是一种序列，字符串也可以拆包</li>
+<li>字符串/序列前面加 <code>*</code>，可以获取子序列</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">grade</span><span class="o">=</span><span class="p">[</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">78</span><span class="p">]</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">b</span><span class="o">=</span><span class="n">grade</span> <span class="c1"># a=70, b=[80,65,78]</span>
+</code></pre></div>
+<p><strong>4. 元素判断：</strong></p>
+<ul>
+<li>we have: <code>a=[2,3,4,5,7,11,13]</code></li>
+<li><code>print(3 in a)</code> True</li>
+<li><code>[2,3] in a</code> False</li>
+<li><code>[2,3] in [[2,3],4,5,11,13]</code> True</li>
+</ul>
+<p><strong>5. 获取索引：</strong></p>
+<ul>
+<li>获取一个元素的下标。</li>
+<li>如果这个序列中有重复元素，那么对重复元素的 index 操作返回第一次出现时候的index值</li>
+<li>不存在元素会报错返回</li>
+</ul>
+<h4 id="162">1.6.2 字符串<a class="headerlink" href="#162" title="Permanent link">&para;</a></h4>
+<p><strong>1. 原始字符串：</strong></p>
+<p>在一个字符串前面加一个字符 r，表示这个字符串无转义字符</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">r</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;hello\nworld&#39;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="c1"># hello\nworld</span>
+</code></pre></div>
+<p><strong>2. 字符串修改：</strong></p>
+<p>字符串不可以修改单个数据或字符，必须要用新的字符串对变量整个赋值。</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">s</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="c1"># 报错</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">s</span><span class="o">=</span><span class="s1">&#39;hello&#39;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">s</span><span class="o">=</span><span class="s1">&#39;bye&#39;</span> <span class="c1"># 正确修改字符串</span>
+</code></pre></div></p>
+<p><strong>3. 字符串查找子串：find()</strong></p>
+<p>在字符串中查找子串，返回的是第一次出现的位置的下标（从0开始），找不到返回-1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;This is a test.&#39;</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">))</span> <span class="c1"># 2 find 与 index 一致在重复元素，但find 能对不存在的元素返回-1而index不能</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">))</span> <span class="c1"># 2</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">))</span> <span class="c1"># -1</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># 5 3表示范围从index为3开始，不包括3</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span> <span class="c1"># -1 表示范围在index3到6，不包括3和6</span>
+</code></pre></div></p>
+<p><strong>4. 统计次数：count()</strong></p>
+<p>真的很字面意思啊，，</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">s</span><span class="o">=</span><span class="s1">&#39;This is a test.&#39;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">))</span> <span class="c1"># 2</span>
+</code></pre></div>
+<p><strong>5. 修改大小写</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;john s&#39;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">())</span> <span class="c1"># John S 修改首字母</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span> <span class="c1"># JOHN S</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="c1"># john s</span>
+</code></pre></div>
+<p><strong>6. 删除空格</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">name</span><span class="o">=</span><span class="s2">&quot; python &quot;</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>  <span class="c1"># &#39;python&#39;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span> <span class="c1"># &#39;python &#39;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span> <span class="c1"># &#39; python&#39;</span>
+</code></pre></div>
+<p><strong>7. 替换子串</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">s</span><span class="o">=</span><span class="s1">&#39;This is a test.&#39;</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">t</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;eez&#39;</span><span class="p">)</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># Theez eez a test</span>
+</code></pre></div>
+<p><strong>8. 数字转换字符串</strong></p>
+<p><code>str()</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">23</span>    
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Happy Birthday &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;!&#39;</span><span class="p">)</span> <span class="c1"># Happy Birthday 23!</span>
+</code></pre></div></p>
+<p><code>format()</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">23</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Happy Birthday </span><span class="si">{}</span><span class="s1">!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">age</span><span class="p">))</span> <span class="c1"># Happy Birthday 23!</span>
+</code></pre></div>
+多个空就多个format允许，如：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is </span><span class="si">{}</span><span class="s1">, age </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Mary&#39;</span><span class="p">,</span><span class="s1">&#39;18&#39;</span><span class="p">))</span> <span class="c1"># My name is Mary, age 18</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1"># 第二个format直接写18不写&#39;18&#39;也可以</span>
+</code></pre></div></p>
+<h4 id="163">1.6.3 列表<a class="headerlink" href="#163" title="Permanent link">&para;</a></h4>
+<p><strong>1. 列表创建</strong></p>
+<ul>
+<li>
+<p>字面：<code>a=[2.3.7]</code></p>
+</li>
+<li>
+<p><code>list()</code> 函数：<code>a=list('hello')</code> 或者 <code>a=list(range(1,10,2))</code></p>
+</li>
+<li>
+<p>矩阵表示：
+<code>matrix=[[1,2,3],[3,4,5],[5,6,7]]</code>，访问使用 <code>matrix[0][0]</code></p>
+</li>
+</ul>
+<p><em>输入一串数字空格隔开，输出排序后的数字</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">nums</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">numl</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nums</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">numl</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">numl</span><span class="p">)</span>
+</code></pre></div></p>
+<ul>
+<li>使用 <code>append()</code> 函数
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">lst</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>  <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+</code></pre></div></li>
+</ul>
+<p><strong>2. 元素赋值</strong></p>
+<p>列表元素可以被修改</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [2,2,3,4,5]</span>
+</code></pre></div>
+<p>可以用 <code>del()</code> 语句删除列表中的元素</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Kim&#39;</span><span class="p">,</span> <span class="s1">&#39;Karl&#39;</span><span class="p">,</span> <span class="s1">&#39;John&#39;</span><span class="p">]</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">del</span> <span class="n">name</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="c1"># [&#39;Alice&#39;, &#39;Kim&#39;, &#39;John&#39;]</span>
+</code></pre></div>
+<p><strong>3. 切片赋值</strong></p>
+<p>感觉就是把多个元素当成一个切片去用，跟元素赋值一样</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;Perl&#39;</span><span class="p">)</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">name</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;ar&#39;</span><span class="p">)</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="c1"># [&#39;P&#39;, &#39;e&#39;, &#39;a&#39;, &#39;r&#39;]</span>
+</code></pre></div>
+<p><strong>4. 列表函数</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+<th>使用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>l.append(x)</td>
+<td>在列表尾部追加元素 x</td>
+<td><code>l.append(13)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>l.clear()</td>
+<td>清空</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>l.count(x)</td>
+<td>计算 x 出现次数</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>l.copy()</td>
+<td>列表的备份</td>
+<td><code>a = c.copy()</code></td>
+<td>id 不同，作用相当于对 c 取全部切片</td>
+</tr>
+<tr>
+<td>l.extend(x)</td>
+<td>将列表 x 扩充到列表 l 中</td>
+<td><code>l.extend([13,17])</code></td>
+<td></td>
+</tr>
+<tr>
+<td>l.index(value,start,end)</td>
+<td>计算指定范围内 value 出现的第一个下标</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>l.insert(index,x)</td>
+<td>在下标index位置插入x</td>
+<td><code>l.insert(2,4)</code>, <code>l.insert(12,3)</code></td>
+<td>指定插入的位置不存在，则插入到最后</td>
+</tr>
+<tr>
+<td>l.pop(index)</td>
+<td>返回并删除index处的元素</td>
+<td><code>a.pop()</code>, <code>a.pop(2)</code></td>
+<td>不带参数时候默认弹出最后一个元素</td>
+</tr>
+<tr>
+<td>l.remove(value)</td>
+<td>删除值为value的第一个元素</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>l.reverse()</td>
+<td>倒置列表</td>
+<td><code>a.reverse()</code></td>
+<td></td>
+</tr>
+<tr>
+<td>l.sort()</td>
+<td>对列表元素进行排序</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>5. 字符串和列表的相互操作</strong></p>
+<p><code>split()</code> 函数：不带参数表示用空格来划分，带参数则用参数划分。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">date</span> <span class="o">=</span> <span class="s1">&#39;3/11/2018&#39;</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># [&#39;3&#39;, &#39;11&#39;, &#39;2018&#39;]</span>
+</code></pre></div>
+<p><code>join()</code> 函数：参数表示中间用什么东西来间隔</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="s1">&#39;good&#39;</span><span class="p">,</span><span class="s1">&#39;boy&#39;</span><span class="p">,</span><span class="s1">&#39;wii&#39;</span><span class="p">]</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># hello good boy wii</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="c1"># hello:good:boy:wii</span>
+</code></pre></div>
+<h4 id="164">1.6.4 元组<a class="headerlink" href="#164" title="Permanent link">&para;</a></h4>
+<p>元组不可修改，可以任何类型、任何数量。</p>
+<p><strong>1. 元组创建</strong></p>
+<p>用元组的字面量：<code>d = (100,20)</code></p>
+<p>用 <code>tuple()</code> 函数：<code>a = tuple([2,3,5,7,11])</code></p>
+<p><strong>2. 常用函数</strong></p>
+<p>元组不可修改，所以大部分对元组都不适用</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+<th>使用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>t.count(x)</td>
+<td>计算x的出现次数</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>t.index(x)</td>
+<td>计算x的出现下标</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>3.一些案例</strong></p>
+<p><em>输入字符串，排序后按从小到大输出每个字符及该字符在原字符串中的索引。</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">lst</span> <span class="o">=</span> <span class="p">[(</span><span class="n">s</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">index</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))]</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">lst</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</code></pre></div></p>
+<p><em>列表加元素表述二维表格</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3180102988</span><span class="p">,</span><span class="s2">&quot;褚好&quot;</span><span class="p">),</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>          <span class="p">(</span><span class="mi">3170102465</span><span class="p">,</span><span class="s2">&quot;王凯亮&quot;</span><span class="p">),</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>          <span class="p">(</span><span class="mi">3160104456</span><span class="p">,</span><span class="s2">&quot;李永&quot;</span><span class="p">),</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>          <span class="p">(</span><span class="mi">3171104169</span><span class="p">,</span><span class="s2">&quot;陈鑫&quot;</span><span class="p">),</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>          <span class="p">(</span><span class="mi">318400429</span><span class="p">,</span><span class="s2">&quot;徐杭诚&quot;</span><span class="p">)]</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span> <span class="c1"># 按行存取</span>
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a><span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span> <span class="c1"># 按行拆包存取</span>
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">)):</span>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">students</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></p>
+<h4 id="165">1.6.5 随机函数库<a class="headerlink" href="#165" title="Permanent link">&para;</a></h4>
+<p>使用 <code>import random</code> 来导入random随机函数库</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>含义</th>
+<th>使用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>random.random()</td>
+<td>返回一个在[0,1)之间的数字</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>random.uniform(a,b)</td>
+<td>返回一个在[a,b]之间的浮点数</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>random.randint(a,b)</td>
+<td>返回一个在[a,b]之间的整数</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>random.randrange(start,stop,step)</td>
+<td>在指定范围内返回一个随机数</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>random.choice(sequences)</td>
+<td>从序列中随机返回一个数字</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>random.shuffle(x)</td>
+<td>将列表x中顺序打乱</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>random.sample(sequence,k)</td>
+<td>从一个序列中随机获得一个长度为k的序列并随机排序</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>random.seed(n)</td>
+<td>对随机数生成器初始化，n表示随机种子。参数为空时随机种子为系统时间</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>掷硬币，正面向上的概率是多少？</em>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)]</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">test</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">))</span> <span class="c1"># 0.5006</span>
+</code></pre></div></p>
+<h4 id="166">1.6.6 集合<a class="headerlink" href="#166" title="Permanent link">&para;</a></h4>
+<p>set，一类容器，<strong>无序</strong>，元素值不可重复（如果重复的话python会把重复的直接消除）</p>
+<p><strong>列表等可变对象不能做集合的元素</strong></p>
+<p><strong>1. 集合创建</strong></p>
+<ul>
+<li>直接给变量赋值：<code>fruit = {'apple', 'orange', 'pear', 'banana'}</code></li>
+<li>使用 <code>set()</code> 创建空集合</li>
+<li>也可以将列表或元组转换为集合</li>
+</ul>
+<p><strong>2. 操作集合的元素</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>len()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>min()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>max()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>sum()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>add()</code></td>
+<td><code>s.add(3)</code>，把元素3加入到集合 s 中</td>
+</tr>
+<tr>
+<td><code>remove()</code></td>
+<td><code>s.remove(3)</code>，删除元素3。如果不存在抛出KeyError异常</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>用循环遍历：<code>for x in s</code> 集合无序，输出结果也无序</li>
+<li><code>in</code> ，<code>not in</code> 可判断</li>
+<li><code>s1.issubset(s2)</code> 或 <code>s1.issuperset(s2)</code> 判断子集或超集</li>
+<li>返回 True False</li>
+<li><code>==</code> , <code>!=</code> 判断元素</li>
+<li><code>&lt;</code>, <code>&lt;=</code> , <code>&gt;</code>, <code>&gt;=</code> 真子集，子集，真超集，超集</li>
+</ul>
+<p><strong>3. 集合运算</strong></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>union()</code></td>
+<td><code>|</code> 或</td>
+<td>并集</td>
+</tr>
+<tr>
+<td><code>intersection()</code></td>
+<td><code>&amp;</code> 与</td>
+<td>交集</td>
+</tr>
+<tr>
+<td><code>difference()</code></td>
+<td><code>-</code> 减</td>
+<td>差集</td>
+</tr>
+<tr>
+<td><code>symmertric_difference()</code></td>
+<td><code>^</code> 异或</td>
+<td>对称性，结果是除了一个共同元素外的所有元素</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4. 一些案例</strong></p>
+<p><em>找指定范围内的质数</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">m</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="n">primes</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>    <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">primes</span><span class="p">:</span>
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>        <span class="n">primes</span><span class="o">=</span><span class="n">primes</span><span class="o">-</span><span class="nb">set</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">primes</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="167">1.6.7 字典<a class="headerlink" href="#167" title="Permanent link">&para;</a></h4>
+<h3 id="17">1.7 函数<a class="headerlink" href="#17" title="Permanent link">&para;</a></h3>
+<h4 id="171">1.7.1 定义<a class="headerlink" href="#171" title="Permanent link">&para;</a></h4>
+<ul>
+<li>内置函数：<code>len()</code></li>
+<li>自定义函数：先定义，才能使用
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>  <span class="n">value</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>  <span class="k">return</span> <span class="n">value</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="n">y</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</code></pre></div></li>
+</ul>
+<p><strong>函数是一种对象：有id，type，value</strong></p>
+<h4 id="172">1.7.2 参数<a class="headerlink" href="#172" title="Permanent link">&para;</a></h4>
+<p><strong>1. 位置参数</strong></p>
+<p>传入参数按照顺序复制上去。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="k">def</span> <span class="nf">dis</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">):</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x1=</span><span class="si">{}</span><span class="s2">,y1=</span><span class="si">{}</span><span class="s2">,x2=</span><span class="si">{}</span><span class="s2">,y2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">))</span> 
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>  <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">dis</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div>
+<p><strong>2. 关键字参数</strong></p>
+<p>如位置参数，添加具体顺序调用：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="o">....</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">dis</span><span class="p">(</span><span class="n">x1</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">y2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">y1</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">x2</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div></p>
+<p><strong>当同时存在位置和关键词参数时，要先写位置参数再写关键词参数。</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="o">...</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">dis</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">y2</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">x2</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div></p>
+<p><strong>3. 默认值参数</strong>
+当调用方没有提供对应的参数值时，你可以指定默认参数值。如果你提供参数值，在调用时会代替默认值。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="k">def</span> <span class="nf">dis</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#求平 面上两点距离  </span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x1=</span><span class="si">{}</span><span class="s2">,y1=</span><span class="si">{}</span><span class="s2">,x2=</span><span class="si">{}</span><span class="s2">,y2=</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">))</span> 
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>    <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">dis</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div></p>
+<p><strong>4. 不定长数目参数</strong>
+当函数参数数目不确定时，星号将一组可变数量的位置参数集合成参数值的元组。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">def</span> <span class="nf">countnum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">b</span><span class="p">):</span> <span class="c1">#计算参数个数</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="n">countnum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="n">countnum</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">89</span><span class="p">)</span>
+</code></pre></div>
+<p>输出：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>      <span class="c1">#以元组的形式存放</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="mi">3</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">89</span><span class="p">)</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="mi">5</span>
+</code></pre></div></p>
+<p><strong>一个星号表示输出到元组，两个星号表示输出到字典</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">def</span> <span class="nf">countnum</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="o">**</span><span class="n">d</span><span class="p">):</span> <span class="c1">#计算参数个数</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="n">countnum</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">x1</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">x2</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">x3</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">x4</span><span class="o">=</span><span class="mi">89</span><span class="p">)</span>
+</code></pre></div>
+<p>输出：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="p">{</span><span class="s1">&#39;x1&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;x2&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;x3&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;x4&#39;</span><span class="p">:</span> <span class="mi">89</span><span class="p">}</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="mi">5</span>
+</code></pre></div></p>
+<p><strong>5. print 参数</strong></p>
+<ul>
+<li><code>print(*object, sep=" ", end="\n", file=sys.stdout)</code></li>
+<li>object: 输出参数, sys.stdout：输出到屏幕</li>
+<li><code>I=[2,7,5]</code></li>
+<li><code>print(I)</code> ，输出 [2,7,5]</li>
+<li><code>print(*I)</code>，输出 2 7 5</li>
+<li><em>表示将序列拆成一个个单独的实参，而</em>*则表示将字典拆成一个个单独的带变量名的实参.</li>
+</ul>
+<h4 id="173">1.7.3 返回值<a class="headerlink" href="#173" title="Permanent link">&para;</a></h4>
+<p>return</p>
+<p><strong>匿名函数：lambda表达式</strong></p>
+<p>lambda 用来编写简单的函数，而def用来处理更强大的任务的函数。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>    
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="c1">#把lambda定义的匿名函数赋给函数g</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+</code></pre></div>
+<p>全局变与局部变量，global 关键字</p>
+<h4 id="174">1.7.4 递归<a class="headerlink" href="#174" title="Permanent link">&para;</a></h4>
+<p>斐波那契：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span>  <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>    <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>  <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div>
+<p><em>卧槽。。。。</em></p>
+<p>动态规划</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">pre</span> <span class="o">=</span> <span class="p">{</span><span class="n">o</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>  <span class="k">if</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">pre</span><span class="p">:</span>
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>    <span class="k">return</span> <span class="n">pre</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>  <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>    <span class="n">newvalue</span> <span class="o">=</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>    <span class="n">pre</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">newvalue</span>
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>    <span class="k">return</span> <span class="n">newvalue</span>
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
+<a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a><span class="c1"># 感觉也不是很dynamic programming，只是拿了一个字典（数组）来记录不用每次都递归罢了</span>
+</code></pre></div>
+<h4 id="175">1.7.5 内置函数<a class="headerlink" href="#175" title="Permanent link">&para;</a></h4>
+<p><strong>sorted:</strong> 对于列表有用</p>
+<p>sort(iterable, key, reverse)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="n">students</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;江幸&#39;</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39; 方鹏&#39;</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;陈可&#39;</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">14</span><span class="p">)]</span> <span class="c1">#第二个分量是成绩，第三个分量是年龄</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span> <span class="c1"># 按年龄从小到大排序</span>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="c1"># [(&#39; 方鹏&#39;, 80, 14), (&#39;陈可&#39;, 85, 14), (&#39;江幸&#39;, 89, 15)]</span>
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span><span class="c1"># 按成绩从大到小降序</span>
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a><span class="c1"># [(&#39;江幸&#39;, 89, 15), (&#39;陈可&#39;, 85, 14), (&#39; 方鹏&#39;, 80, 14)]</span>
+</code></pre></div></p>
+<p><strong>map:</strong> 多用于input
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])))</span> <span class="c1"># 使用 lambda 匿名函数</span>
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="c1"># [1, 4, 9, 16, 25]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">])))</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="c1"># 提供了两个列表，对相同位置的列表数据进行相加</span>
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="c1"># [3, 7, 11, 15, 19]</span>
+</code></pre></div></p>
+<p><strong>zip:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)))</span> <span class="c1"># [(1, 4), (2, 5), (3, 6)]</span>
+<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">c</span><span class="p">)))</span> <span class="c1"># 元素个数与最短的列表一致</span>
+<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a><span class="c1"># [(1, 4), (2, 5), (3, 6)]</span>
+</code></pre></div>
+或者字典键值互换
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="n">d</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;blue&#39;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;white&#39;</span><span class="p">:</span><span class="mi">300</span><span class="p">}</span> 
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="n">d1</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span><span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a><span class="c1"># {500: &#39;blue&#39;, 100: &#39;red&#39;, 300: &#39;white&#39;}</span>
+</code></pre></div></p>
+<p><strong>eval:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="nb">eval</span><span class="p">(</span><span class="err">‘</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="o">-</span><span class="mi">4</span><span class="err">’</span><span class="p">)</span>
+<a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="c1"># 20</span>
+</code></pre></div></p>
+<p><strong>exec:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="n">exec</span><span class="p">(</span><span class="err">‘</span><span class="nb">print</span><span class="p">(</span><span class="err">“</span><span class="n">hello</span> <span class="n">world</span><span class="err">”</span><span class="p">)</span><span class="err">’</span><span class="p">)</span>
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="n">Hello</span> <span class="n">world</span> 
+</code></pre></div></p>
+<p><strong>all:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="n">n</span><span class="o">=</span><span class="mi">47</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">([</span><span class="mi">1</span> <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">k</span><span class="o">!=</span><span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">)]))</span> <span class="c1">#True</span>
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a><span class="n">n</span><span class="o">=</span><span class="mi">15</span>
+<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">all</span><span class="p">([</span><span class="mi">1</span> <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">k</span><span class="o">!=</span><span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">)]))</span> <span class="c1">#False</span>
+</code></pre></div></p>
+<p><strong>any:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="nb">any</span><span class="p">([[],</span><span class="kc">False</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>   <span class="c1">#空列表和0都表示False</span>
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a><span class="c1">#False</span>
+</code></pre></div></p>
+<h3 id="18">1.8 程序模块<a class="headerlink" href="#18" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>import  模块名
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>import  模块名 as 别名 
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>from  模块名 import  *
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>这种方法引入模块中的所有函数，调用的时候不需要再加模块名
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>from  模块名 import  函数名
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>这种方法引入模块中的单个函数，调用的时候也不需要再加模块名
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>del 模块名       删除引入的模块名
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/AnyaReese/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+    
+  </body>
+</html>
